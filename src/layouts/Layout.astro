@@ -11,31 +11,43 @@ const { title } = Astro.props;
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- Security Meta Tags -->
+		<meta name="referrer" content="strict-origin-when-cross-origin" />
+		<meta http-equiv="X-Content-Type-Options" content="nosniff" />
+		<meta http-equiv="X-Frame-Options" content="DENY" />
 		<title>{title}</title>
-		<meta name="description" content="Upskilling People. Advancing Organizations. Get Ahead, Get Certified, Grow Your Skills Through Our Top Rated Training." />
-		
+		<meta
+			name="description"
+			content="Upskilling People. Advancing Organizations. Get Ahead, Get Certified, Grow Your Skills Through Our Top Rated Training."
+		/>
+
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		
+
 		<!-- Google Fonts -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-		
+		<link
+			href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"
+			rel="stylesheet"
+		/>
+
 		<!-- Lucide Icons -->
 		<script is:inline src="https://unpkg.com/lucide@latest"></script>
-		
+
 		<!-- Global stylesheet from public dir -->
 		<link rel="stylesheet" href="/style.css" />
 	</head>
 	<body>
 		<slot />
-		
+
 		<script is:inline>
 			// Initialize Lucide Icons on component load or view transition
 			document.addEventListener("DOMContentLoaded", () => {
 				lucide.createIcons();
 			});
 		</script>
+		<!-- Security layer — loaded FIRST before any other script -->
+		<script is:inline src="/security.js"></script>
 		<script is:inline src="/script.js"></script>
 	</body>
 </html>

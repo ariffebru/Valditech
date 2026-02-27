@@ -1,8 +1,8 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="Valditech - IT Training Courses & Certifications">
+<Layout title="Valditech - IT Training Courses &amp; Certifications">
 	<!-- Header / Navbar -->
 	<header class="navbar" id="navbar">
 		<div class="container nav-container">
@@ -11,10 +11,26 @@ import Layout from '../layouts/Layout.astro';
 			</a>
 
 			<nav class="nav-links">
-				<a href="#courses" class="nav-item">Training & Courses</a>
+				<a href="#courses" class="nav-item">Training &amp; Courses</a>
 				<a href="#certifications" class="nav-item">Certifications</a>
 				<a href="#solutions" class="nav-item">Organization Solutions</a>
 				<a href="#resources" class="nav-item">Resources</a>
+				<!-- Product Dropdown -->
+				<div class="nav-dropdown" id="product-dropdown">
+					<button class="nav-item nav-dropdown-btn" aria-haspopup="true" aria-expanded="false" aria-controls="product-menu">
+						Products <i data-lucide="chevron-down" class="dropdown-chevron"></i>
+					</button>
+					<ul class="dropdown-menu" id="product-menu" role="menu">
+						<li role="menuitem"><a href="/ugreen" class="dropdown-item">
+							<span class="dropdown-icon">&#9679;</span>
+							<span>UGREEN</span>
+						</a></li>
+						<li role="menuitem"><a href="#mcdodo" class="dropdown-item">
+							<span class="dropdown-icon">&#9679;</span>
+							<span>Mcdodo</span>
+						</a></li>
+					</ul>
+				</div>
 			</nav>
 
 			<div class="nav-actions">
@@ -32,6 +48,7 @@ import Layout from '../layouts/Layout.astro';
 	<main>
 		<!-- Hero Section -->
 		<section class="hero">
+			<canvas id="hero-wave-canvas" class="hero-wave-canvas"></canvas>
 			<div class="hero-bg-shapes">
 				<div class="shape shape-1"></div>
 				<div class="shape shape-2"></div>
@@ -40,13 +57,26 @@ import Layout from '../layouts/Layout.astro';
 			<div class="container hero-container">
 				<div class="hero-content">
 					<div class="badge">#1 IT Training Partner</div>
-					<h1 class="hero-title">Upskilling People.<br /><span class="text-gradient">Advancing Organizations.</span></h1>
-					<p class="hero-subtitle">Get Ahead, Get Certified, Grow Your Skills Through Our Top Rated IT and Management Training Solutions.</p>
+					<h1 class="hero-title">
+						Upskilling People.<br /><span class="text-gradient">Advancing Organizations.</span>
+					</h1>
+					<p class="hero-subtitle">
+						Get Ahead, Get Certified, Grow Your Skills Through Our
+						Top Rated IT and Management Training Solutions.
+					</p>
 
 					<div class="search-bar-interactive">
 						<i data-lucide="search" class="search-icon"></i>
-						<input type="text" placeholder="What do you want to learn today? (e.g. Cybersecurity, PMP)" />
-						<button class="btn btn-primary">Find Training</button>
+						<input
+							id="hero-search"
+							type="text"
+							placeholder="What do you want to learn today? (e.g. Cybersecurity, PMP)"
+							maxlength="100"
+							autocomplete="off"
+							spellcheck="false"
+							aria-label="Search training courses"
+						/>
+						<button class="btn btn-primary" type="button" aria-label="Find Training">Find Training</button>
 					</div>
 
 					<div class="hero-stats">
@@ -65,7 +95,6 @@ import Layout from '../layouts/Layout.astro';
 					</div>
 				</div>
 				<div class="hero-image-wrapper">
-					<!-- Placeholder for a premium abstract image or illustration -->
 					<div class="glass-card main-hero-card">
 						<div class="card-header">
 							<div class="circle red"></div>
@@ -73,16 +102,24 @@ import Layout from '../layouts/Layout.astro';
 							<div class="circle green"></div>
 						</div>
 						<div class="card-body">
-							<div class="code-line">const <span class="keyword">skill</span> = new Skill();</div>
-							<div class="code-line"><span class="keyword">skill</span>.upgrade(<span class="string">'Cybersecurity'</span>);</div>
-							<div class="code-line"><span class="keyword">skill</span>.certify();</div>
-							<div class="code-line success">✓ Certification Achieved</div>
+							<div class="code-line">
+								const <span class="keyword">skill</span> = new Skill();
+							</div>
+							<div class="code-line">
+								<span class="keyword">skill</span>.upgrade(<span class="string">'Cybersecurity'</span>);
+							</div>
+							<div class="code-line">
+								<span class="keyword">skill</span>.certify();
+							</div>
+							<div class="code-line success">
+								&#10003; Certification Achieved
+							</div>
 						</div>
 					</div>
 
 					<div class="floating-badge badge-1">
 						<i data-lucide="shield-check"></i>
-						<span>Cybersecurity ITIL®</span>
+						<span>Cybersecurity ITIL&#174;</span>
 					</div>
 					<div class="floating-badge badge-2">
 						<i data-lucide="cloud"></i>
@@ -92,24 +129,49 @@ import Layout from '../layouts/Layout.astro';
 			</div>
 		</section>
 
-		<!-- Trusted Partners (Marquee) -->
-		<section class="trusted-partners">
+		<!-- Trusted Partners (Marquee) -->		<section class="trusted-partners">
 			<div class="container">
-				<p class="partners-label">TRUSTED BY INDUSTRY LEADERS WORLDWIDE</p>
+				<p class="partners-label">
+					TRUSTED BY INDUSTRY LEADERS WORLDWIDE
+				</p>
 				<div class="marquee-container">
 					<div class="marquee-content">
-						<div class="partner-logo"><i data-lucide="server"></i> Microsoft</div>
-						<div class="partner-logo"><i data-lucide="cloud"></i> AWS</div>
-						<div class="partner-logo"><i data-lucide="database"></i> Oracle</div>
-						<div class="partner-logo"><i data-lucide="cpu"></i> Cisco</div>
-						<div class="partner-logo"><i data-lucide="code"></i> CompTIA</div>
-						<div class="partner-logo"><i data-lucide="layout"></i> PMI</div>
-						<div class="partner-logo"><i data-lucide="server"></i> Microsoft</div>
-						<div class="partner-logo"><i data-lucide="cloud"></i> AWS</div>
-						<div class="partner-logo"><i data-lucide="database"></i> Oracle</div>
-						<div class="partner-logo"><i data-lucide="cpu"></i> Cisco</div>
-						<div class="partner-logo"><i data-lucide="code"></i> CompTIA</div>
-						<div class="partner-logo"><i data-lucide="layout"></i> PMI</div>
+						<div class="partner-logo">
+							<i data-lucide="server"></i> Microsoft
+						</div>
+						<div class="partner-logo">
+							<i data-lucide="cloud"></i> AWS
+						</div>
+						<div class="partner-logo">
+							<i data-lucide="database"></i> Oracle
+						</div>
+						<div class="partner-logo">
+							<i data-lucide="cpu"></i> Cisco
+						</div>
+						<div class="partner-logo">
+							<i data-lucide="code"></i> CompTIA
+						</div>
+						<div class="partner-logo">
+							<i data-lucide="layout"></i> PMI
+						</div>
+						<div class="partner-logo">
+							<i data-lucide="server"></i> Microsoft
+						</div>
+						<div class="partner-logo">
+							<i data-lucide="cloud"></i> AWS
+						</div>
+						<div class="partner-logo">
+							<i data-lucide="database"></i> Oracle
+						</div>
+						<div class="partner-logo">
+							<i data-lucide="cpu"></i> Cisco
+						</div>
+						<div class="partner-logo">
+							<i data-lucide="code"></i> CompTIA
+						</div>
+						<div class="partner-logo">
+							<i data-lucide="layout"></i> PMI
+						</div>
 					</div>
 				</div>
 			</div>
@@ -119,8 +181,15 @@ import Layout from '../layouts/Layout.astro';
 		<section id="courses" class="subjects-section section-padding">
 			<div class="container">
 				<div class="section-header">
-					<h2>Explore Top Training <span class="text-gradient">Categories</span></h2>
-					<p>Advance your career with our most popular IT and management courses.</p>
+					<h2>
+						Explore Top Training <span class="text-gradient"
+							>Categories</span
+						>
+					</h2>
+					<p>
+						Advance your career with our most popular IT and
+						management courses.
+					</p>
 				</div>
 
 				<div class="grid categories-grid">
@@ -129,8 +198,13 @@ import Layout from '../layouts/Layout.astro';
 							<i data-lucide="shield"></i>
 						</div>
 						<h3>Cybersecurity</h3>
-						<p>Protect networks, devices, and data from unauthorized access.</p>
-						<span class="course-count">45+ Courses <i data-lucide="arrow-right"></i></span>
+						<p>
+							Protect networks, devices, and data from
+							unauthorized access.
+						</p>
+						<span class="course-count"
+							>45+ Courses <i data-lucide="arrow-right"></i></span
+						>
 					</a>
 
 					<a href="#" class="category-card">
@@ -139,7 +213,9 @@ import Layout from '../layouts/Layout.astro';
 						</div>
 						<h3>Cloud Computing</h3>
 						<p>Master AWS, Azure, and Google Cloud platforms.</p>
-						<span class="course-count">32+ Courses <i data-lucide="arrow-right"></i></span>
+						<span class="course-count"
+							>32+ Courses <i data-lucide="arrow-right"></i></span
+						>
 					</a>
 
 					<a href="#" class="category-card">
@@ -147,8 +223,13 @@ import Layout from '../layouts/Layout.astro';
 							<i data-lucide="bar-chart-2"></i>
 						</div>
 						<h3>Data Science & AI</h3>
-						<p>Leverage data analytics, machine learning, and AI tools.</p>
-						<span class="course-count">28+ Courses <i data-lucide="arrow-right"></i></span>
+						<p>
+							Leverage data analytics, machine learning, and AI
+							tools.
+						</p>
+						<span class="course-count"
+							>28+ Courses <i data-lucide="arrow-right"></i></span
+						>
 					</a>
 
 					<a href="#" class="category-card">
@@ -156,8 +237,13 @@ import Layout from '../layouts/Layout.astro';
 							<i data-lucide="settings"></i>
 						</div>
 						<h3>Agile & Scrum</h3>
-						<p>Streamline project management and team collaboration.</p>
-						<span class="course-count">15+ Courses <i data-lucide="arrow-right"></i></span>
+						<p>
+							Streamline project management and team
+							collaboration.
+						</p>
+						<span class="course-count"
+							>15+ Courses <i data-lucide="arrow-right"></i></span
+						>
 					</a>
 
 					<a href="#" class="category-card">
@@ -165,8 +251,12 @@ import Layout from '../layouts/Layout.astro';
 							<i data-lucide="terminal-square"></i>
 						</div>
 						<h3>Software Development</h3>
-						<p>Learn modern programming languages and frameworks.</p>
-						<span class="course-count">50+ Courses <i data-lucide="arrow-right"></i></span>
+						<p>
+							Learn modern programming languages and frameworks.
+						</p>
+						<span class="course-count"
+							>50+ Courses <i data-lucide="arrow-right"></i></span
+						>
 					</a>
 
 					<a href="#" class="category-card">
@@ -174,19 +264,34 @@ import Layout from '../layouts/Layout.astro';
 							<i data-lucide="users"></i>
 						</div>
 						<h3>Leadership & Business</h3>
-						<p>Develop essential soft skills and management techniques.</p>
-						<span class="course-count">20+ Courses <i data-lucide="arrow-right"></i></span>
+						<p>
+							Develop essential soft skills and management
+							techniques.
+						</p>
+						<span class="course-count"
+							>20+ Courses <i data-lucide="arrow-right"></i></span
+						>
 					</a>
 				</div>
 			</div>
 		</section>
 
 		<!-- Featured Courses / Certifications -->
-		<section id="certifications" class="featured-section section-padding bg-light">
+		<section
+			id="certifications"
+			class="featured-section section-padding bg-light"
+		>
 			<div class="container">
 				<div class="section-header center">
-					<h2>Get Ahead, Get <span class="text-gradient">Certified</span></h2>
-					<p>Validate your skills with widely recognized industry certifications.</p>
+					<h2>
+						Get Ahead, Get <span class="text-gradient"
+							>Certified</span
+						>
+					</h2>
+					<p>
+						Validate your skills with widely recognized industry
+						certifications.
+					</p>
 				</div>
 
 				<div class="tabs-container">
@@ -206,13 +311,20 @@ import Layout from '../layouts/Layout.astro';
 						<div class="card-content">
 							<div class="course-meta">
 								<span><i data-lucide="clock"></i> 5 Days</span>
-								<span><i data-lucide="monitor-play"></i> Virtual/In-Person</span>
+								<span
+									><i data-lucide="monitor-play"></i> Virtual/In-Person</span
+								>
 							</div>
-							<h3>CISSP® Training and Certification Prep</h3>
-							<p>Gain the foundational knowledge to fully comprehend the 8 domains of the CISSP CBK.</p>
+							<h3>CISSPÂ® Training and Certification Prep</h3>
+							<p>
+								Gain the foundational knowledge to fully
+								comprehend the 8 domains of the CISSP CBK.
+							</p>
 							<div class="card-footer">
 								<span class="price">From $2,895</span>
-								<a href="#" class="btn btn-outline btn-sm">View Details</a>
+								<a href="#" class="btn btn-outline btn-sm"
+									>View Details</a
+								>
 							</div>
 						</div>
 					</div>
@@ -222,13 +334,20 @@ import Layout from '../layouts/Layout.astro';
 						<div class="card-content">
 							<div class="course-meta">
 								<span><i data-lucide="clock"></i> 3 Days</span>
-								<span><i data-lucide="monitor-play"></i> Virtual/On-Demand</span>
+								<span
+									><i data-lucide="monitor-play"></i> Virtual/On-Demand</span
+								>
 							</div>
-							<h3>ITIL® 4 Foundation Training</h3>
-							<p>Learn the core concepts of ITIL 4 to optimize IT services and improve value delivery.</p>
+							<h3>ITILÂ® 4 Foundation Training</h3>
+							<p>
+								Learn the core concepts of ITIL 4 to optimize IT
+								services and improve value delivery.
+							</p>
 							<div class="card-footer">
 								<span class="price">From $1,495</span>
-								<a href="#" class="btn btn-outline btn-sm">View Details</a>
+								<a href="#" class="btn btn-outline btn-sm"
+									>View Details</a
+								>
 							</div>
 						</div>
 					</div>
@@ -240,34 +359,59 @@ import Layout from '../layouts/Layout.astro';
 						<div class="card-content">
 							<div class="course-meta">
 								<span><i data-lucide="clock"></i> 4 Days</span>
-								<span><i data-lucide="monitor-play"></i> Virtual</span>
+								<span
+									><i data-lucide="monitor-play"></i> Virtual</span
+								>
 							</div>
 							<h3>CompTIA Security+ Certification Training</h3>
-							<p>Acquire the fundamental skills required to perform core security functions.</p>
+							<p>
+								Acquire the fundamental skills required to
+								perform core security functions.
+							</p>
 							<div class="card-footer">
 								<span class="price">From $2,195</span>
-								<a href="#" class="btn btn-outline btn-sm">View Details</a>
+								<a href="#" class="btn btn-outline btn-sm"
+									>View Details</a
+								>
 							</div>
 						</div>
 					</div>
 				</div>
 
 				<div class="center-btn-wrapper">
-					<a href="#" class="btn btn-primary btn-lg">View All Certifications <i data-lucide="arrow-right"></i></a>
+					<a href="#" class="btn btn-primary btn-lg"
+						>View All Certifications <i data-lucide="arrow-right"
+						></i></a
+					>
 				</div>
 			</div>
 		</section>
 
 		<!-- Organization Solutions (Banner) -->
 		<section id="solutions" class="solutions-cta">
+			<canvas id="solutions-wave-canvas" class="solutions-wave-canvas"
+			></canvas>
 			<div class="container">
 				<div class="cta-card glass-panel">
 					<div class="cta-content">
-						<h2>Training Solutions Designed to <span class="text-gradient">Improve Performance</span></h2>
-						<p>Need to train your entire team? Choose a Learning Partner with capabilities to support your organization's success at scale with customized learning paths.</p>
+						<h2>
+							Training Solutions Designed to <span
+								class="text-gradient">Improve Performance</span
+							>
+						</h2>
+						<p>
+							Need to train your entire team? Choose a Learning
+							Partner with capabilities to support your
+							organization's success at scale with customized
+							learning paths.
+						</p>
 						<div class="cta-buttons">
-							<a href="#" class="btn btn-primary">For Organizations</a>
-							<a href="#" class="btn btn-outline-light">Talk to an Advisor</a>
+							<a href="#" class="btn btn-primary"
+								>For Organizations</a
+							>
+							<a href="#" class="btn btn-outline-light"
+								>Talk to an Advisor</a
+							>
 						</div>
 					</div>
 					<div class="cta-visual">
@@ -293,14 +437,29 @@ import Layout from '../layouts/Layout.astro';
 			<div class="footer-top">
 				<div class="footer-brand">
 					<a href="#" class="logo">
-						<img src="/logo.png" alt="Valditech Logo" class="logo-img" />
+						<img
+							src="/logo.png"
+							alt="Valditech Logo"
+							class="logo-img"
+						/>
 					</a>
-					<p>Empowering professionals and organizations worldwide through cutting-edge IT and management training.</p>
+					<p>
+						Empowering professionals and organizations worldwide
+						through cutting-edge IT and management training.
+					</p>
 					<div class="social-links">
-						<a href="#" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
-						<a href="#" aria-label="Twitter"><i data-lucide="twitter"></i></a>
-						<a href="#" aria-label="Facebook"><i data-lucide="facebook"></i></a>
-						<a href="#" aria-label="YouTube"><i data-lucide="youtube"></i></a>
+						<a href="#" aria-label="LinkedIn"
+							><i data-lucide="linkedin"></i></a
+						>
+						<a href="#" aria-label="Twitter"
+							><i data-lucide="twitter"></i></a
+						>
+						<a href="#" aria-label="Facebook"
+							><i data-lucide="facebook"></i></a
+						>
+						<a href="#" aria-label="YouTube"
+							><i data-lucide="youtube"></i></a
+						>
 					</div>
 				</div>
 
@@ -328,10 +487,19 @@ import Layout from '../layouts/Layout.astro';
 
 				<div class="footer-newsletter">
 					<h4>Stay Updated</h4>
-					<p>Get the latest training trends and insights delivered to your inbox.</p>
+					<p>
+						Get the latest training trends and insights delivered to
+						your inbox.
+					</p>
 					<form class="newsletter-form">
-						<input type="email" placeholder="Enter your email address" required />
-						<button type="submit" class="btn btn-primary">Subscribe</button>
+						<input
+							type="email"
+							placeholder="Enter your email address"
+							required
+						/>
+						<button type="submit" class="btn btn-primary"
+							>Subscribe</button
+						>
 					</form>
 				</div>
 			</div>

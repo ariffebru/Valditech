@@ -1,0 +1,1815 @@
+---
+// UGREEN Indonesia - Halaman Produk
+---
+
+<!doctype html>
+<html lang="id">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>UGREEN Indonesia – Charger, NAS, Power Bank & Hub</title>
+        <meta
+            name="description"
+            content="UGREEN menawarkan NAS, charger, power bank, kabel, dan hub untuk iPhone, Android, Mac, dan PC. Jelajahi produk terbaru kami."
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+            rel="stylesheet"
+        />
+        <style>
+            /* ============================================================
+       UGREEN Indonesia — Global Styles
+       Brand: #1a56db (dark green), #1d4ed8 (mid green), #f5f5f0 (off-white)
+       ============================================================ */
+            *,
+            *::before,
+            *::after {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+
+            :root {
+                --green-dark: #0c2461;
+                --green-main: #1a56db;
+                --green-light: #1d4ed8;
+                --green-glow: #60a5fa;
+                --black: #0a0a0a;
+                --dark: #111111;
+                --dark-2: #1a1a1a;
+                --grey: #6b7280;
+                --light-grey: #f3f4f6;
+                --white: #ffffff;
+                --off-white: #f9fafb;
+                --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            }
+
+            html {
+                scroll-behavior: smooth;
+            }
+            body {
+                font-family: "Inter", sans-serif;
+                background: var(--white);
+                color: var(--dark);
+                line-height: 1.6;
+                overflow-x: hidden;
+            }
+            a {
+                text-decoration: none;
+                color: inherit;
+            }
+            img {
+                display: block;
+                max-width: 100%;
+            }
+            ul {
+                list-style: none;
+            }
+            button {
+                cursor: pointer;
+                font-family: inherit;
+            }
+
+            /* ── CONTAINER ── */
+            .container {
+                max-width: 1280px;
+                margin: 0 auto;
+                padding: 0 1.5rem;
+            }
+
+            /* ── BUTTONS ── */
+            .btn {
+                display: inline-flex;
+                align-items: center;
+                gap: 0.5rem;
+                padding: 0.75rem 1.75rem;
+                border-radius: 6px;
+                font-weight: 600;
+                font-size: 0.9rem;
+                border: 2px solid transparent;
+                transition: var(--transition);
+            }
+            .btn-green {
+                background: var(--green-main);
+                color: #fff;
+            }
+            .btn-green:hover {
+                background: var(--green-dark);
+                transform: translateY(-1px);
+                box-shadow: 0 6px 20px rgba(30, 127, 78, 0.4);
+            }
+            .btn-outline {
+                background: transparent;
+                color: var(--dark);
+                border-color: var(--dark);
+            }
+            .btn-outline:hover {
+                background: var(--dark);
+                color: #fff;
+            }
+            .btn-white {
+                background: #fff;
+                color: var(--green-dark);
+            }
+            .btn-white:hover {
+                background: var(--green-glow);
+                color: var(--dark);
+            }
+
+            /* ────────────────────────────────────────────────────────────
+       NAVBAR
+       ──────────────────────────────────────────────────────────── */
+            .ugreen-nav {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                z-index: 900;
+                background: rgba(255, 255, 255, 0.97);
+                backdrop-filter: blur(12px);
+                border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+                transition: var(--transition);
+            }
+            .ugreen-nav .container {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                height: 64px;
+            }
+
+            /* Logo */
+            .nav-logo {
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+            }
+            .nav-logo-text {
+                font-size: 1.5rem;
+                font-weight: 900;
+                letter-spacing: -0.5px;
+                color: var(--green-main);
+            }
+            .nav-logo-text span {
+                color: var(--black);
+            }
+
+            /* Nav links */
+            .nav-menu {
+                display: flex;
+                align-items: center;
+                gap: 2rem;
+            }
+            .nav-link {
+                font-size: 0.9rem;
+                font-weight: 500;
+                color: #374151;
+                transition: color 0.2s;
+            }
+            .nav-link:hover {
+                color: var(--green-main);
+            }
+
+            /* Nav right */
+            .nav-right {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+            }
+            .nav-icon-btn {
+                background: none;
+                border: none;
+                padding: 0.4rem;
+                border-radius: 6px;
+                color: #374151;
+                transition: var(--transition);
+            }
+            .nav-icon-btn:hover {
+                background: var(--light-grey);
+                color: var(--green-main);
+            }
+            .nav-icon-btn svg {
+                width: 20px;
+                height: 20px;
+            }
+
+            .back-link {
+                display: inline-flex;
+                align-items: center;
+                gap: 0.4rem;
+                font-size: 0.85rem;
+                font-weight: 600;
+                color: var(--green-main);
+                padding: 0.4rem 0.9rem;
+                border: 1.5px solid var(--green-main);
+                border-radius: 6px;
+                transition: var(--transition);
+            }
+            .back-link:hover {
+                background: var(--green-main);
+                color: #fff;
+            }
+
+            /* ────────────────────────────────────────────────────────────
+       HERO BANNER — Full-width product feature
+       ──────────────────────────────────────────────────────────── */
+            .hero-banner {
+                margin-top: 64px;
+                position: relative;
+                overflow: hidden;
+                background: linear-gradient(
+                    135deg,
+                    #05060f 0%,
+                    #060d2a 50%,
+                    #090f1e 100%
+                );
+                min-height: 560px;
+                display: flex;
+                align-items: center;
+            }
+            .hero-content-wrap {
+                position: relative;
+                z-index: 2;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                align-items: center;
+                gap: 3rem;
+                padding: 5rem 0;
+            }
+            .hero-tag {
+                display: inline-block;
+                background: rgba(78, 222, 128, 0.15);
+                border: 1px solid var(--green-glow);
+                color: var(--green-glow);
+                font-size: 0.75rem;
+                font-weight: 700;
+                letter-spacing: 1.5px;
+                text-transform: uppercase;
+                padding: 0.35rem 0.9rem;
+                border-radius: 20px;
+                margin-bottom: 1.25rem;
+            }
+            .hero-title {
+                font-size: clamp(2.2rem, 4vw, 3.5rem);
+                font-weight: 900;
+                color: #fff;
+                line-height: 1.15;
+                margin-bottom: 1rem;
+            }
+            .hero-title em {
+                color: var(--green-glow);
+                font-style: normal;
+            }
+            .hero-subtitle {
+                font-size: 1.05rem;
+                color: rgba(255, 255, 255, 0.72);
+                margin-bottom: 2rem;
+                max-width: 440px;
+            }
+            .hero-img {
+                border-radius: 16px;
+                overflow: hidden;
+                box-shadow: 0 32px 80px rgba(0, 0, 0, 0.5);
+            }
+            .hero-img img {
+                width: 100%;
+                height: 360px;
+                object-fit: cover;
+            }
+
+            /* Ambient glow behind image */
+            .hero-glow {
+                position: absolute;
+                right: 10%;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 500px;
+                height: 500px;
+                background: radial-gradient(
+                    circle,
+                    rgba(46, 165, 94, 0.25) 0%,
+                    transparent 70%
+                );
+                pointer-events: none;
+            }
+
+            /* ────────────────────────────────────────────────────────────
+       PROMO BAR
+       ──────────────────────────────────────────────────────────── */
+            .promo-bar {
+                background: var(--green-main);
+                color: #fff;
+                padding: 0.75rem 0;
+                text-align: center;
+                font-size: 0.875rem;
+                font-weight: 600;
+                letter-spacing: 0.3px;
+            }
+            .promo-bar a {
+                color: #fff;
+                text-decoration: underline;
+                margin-left: 0.5rem;
+            }
+
+            /* ────────────────────────────────────────────────────────────
+       FEATURED SERIES — Horizontal scroll cards
+       ──────────────────────────────────────────────────────────── */
+            .section {
+                padding: 5rem 0;
+            }
+            .section-dark {
+                background: var(--dark);
+                color: #fff;
+            }
+            .section-light {
+                background: var(--off-white);
+            }
+
+            .section-header {
+                text-align: center;
+                margin-bottom: 3rem;
+            }
+            .section-badge {
+                display: inline-block;
+                font-size: 0.75rem;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                color: var(--green-main);
+                margin-bottom: 0.75rem;
+            }
+            .section-title {
+                font-size: clamp(1.6rem, 3vw, 2.5rem);
+                font-weight: 800;
+                line-height: 1.25;
+            }
+            .section-title.light {
+                color: #fff;
+            }
+            .section-sub {
+                color: var(--grey);
+                margin-top: 0.75rem;
+                font-size: 1rem;
+            }
+            .section-sub.light {
+                color: rgba(255, 255, 255, 0.6);
+            }
+
+            /* Series Cards Grid */
+            .series-grid {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 1.25rem;
+            }
+
+            .series-card {
+                position: relative;
+                border-radius: 16px;
+                overflow: hidden;
+                aspect-ratio: 3/4;
+                cursor: pointer;
+                transition:
+                    transform 0.3s ease,
+                    box-shadow 0.3s ease;
+            }
+            .series-card:hover {
+                transform: translateY(-6px);
+                box-shadow: 0 24px 60px rgba(0, 0, 0, 0.25);
+            }
+            .series-card img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            .series-card-overlay {
+                position: absolute;
+                inset: 0;
+                background: linear-gradient(
+                    to top,
+                    rgba(0, 0, 0, 0.85) 0%,
+                    rgba(0, 0, 0, 0.1) 50%,
+                    transparent 100%
+                );
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+                padding: 1.5rem;
+            }
+            .series-name {
+                font-size: 1.15rem;
+                font-weight: 800;
+                color: #fff;
+                margin-bottom: 0.25rem;
+            }
+            .series-desc {
+                font-size: 0.8rem;
+                color: rgba(255, 255, 255, 0.75);
+                margin-bottom: 1rem;
+            }
+            .series-cta {
+                display: inline-flex;
+                align-items: center;
+                gap: 0.4rem;
+                font-size: 0.8rem;
+                font-weight: 700;
+                color: var(--green-glow);
+                transition: gap 0.2s;
+            }
+            .series-card:hover .series-cta {
+                gap: 0.7rem;
+            }
+
+            /* ────────────────────────────────────────────────────────────
+       HERO BANNER 2 — NASync spotlight
+       ──────────────────────────────────────────────────────────── */
+            .spotlight {
+                background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+                border-radius: 24px;
+                margin: 0 1.5rem;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                align-items: center;
+                gap: 3rem;
+                padding: 4rem;
+                overflow: hidden;
+                position: relative;
+            }
+            .spotlight-img {
+                border-radius: 12px;
+                overflow: hidden;
+                box-shadow: 0 20px 60px rgba(30, 127, 78, 0.2);
+            }
+            .spotlight-img img {
+                width: 100%;
+                height: 320px;
+                object-fit: cover;
+            }
+            .spotlight-tag {
+                display: inline-block;
+                background: var(--green-main);
+                color: #fff;
+                font-size: 0.7rem;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 1.5px;
+                padding: 0.3rem 0.8rem;
+                border-radius: 20px;
+                margin-bottom: 1rem;
+            }
+            .spotlight-title {
+                font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+                font-weight: 800;
+                margin-bottom: 1rem;
+            }
+            .spotlight-sub {
+                color: var(--grey);
+                margin-bottom: 2rem;
+            }
+            .spotlight-features {
+                display: flex;
+                flex-direction: column;
+                gap: 0.75rem;
+                margin-bottom: 2rem;
+            }
+            .feature-item {
+                display: flex;
+                align-items: center;
+                gap: 0.7rem;
+                font-size: 0.9rem;
+                font-weight: 500;
+            }
+            .feature-dot {
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                background: var(--green-main);
+                flex-shrink: 0;
+            }
+
+            /* ────────────────────────────────────────────────────────────
+       CATEGORY GRID
+       ──────────────────────────────────────────────────────────── */
+            .category-grid {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 1rem;
+            }
+
+            .category-card {
+                background: #fff;
+                border-radius: 16px;
+                overflow: hidden;
+                border: 1px solid #e5e7eb;
+                transition: var(--transition);
+                cursor: pointer;
+            }
+            .category-card:hover {
+                border-color: var(--green-main);
+                box-shadow: 0 8px 30px rgba(30, 127, 78, 0.12);
+                transform: translateY(-3px);
+            }
+            .category-card img {
+                width: 100%;
+                height: 200px;
+                object-fit: cover;
+            }
+            .category-info {
+                padding: 1.25rem;
+            }
+            .category-name {
+                font-size: 1rem;
+                font-weight: 700;
+                margin-bottom: 0.3rem;
+            }
+            .category-count {
+                font-size: 0.8rem;
+                color: var(--grey);
+            }
+            .category-arrow {
+                display: inline-flex;
+                align-items: center;
+                gap: 0.3rem;
+                font-size: 0.8rem;
+                font-weight: 600;
+                color: var(--green-main);
+                margin-top: 0.75rem;
+                transition: gap 0.2s;
+            }
+            .category-card:hover .category-arrow {
+                gap: 0.6rem;
+            }
+
+            /* ────────────────────────────────────────────────────────────
+       STATS BANNER
+       ──────────────────────────────────────────────────────────── */
+            .stats-bar {
+                background: var(--green-dark);
+                color: #fff;
+                padding: 3.5rem 0;
+            }
+            .stats-grid {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 2rem;
+                text-align: center;
+            }
+            .stat-num {
+                font-size: 2.5rem;
+                font-weight: 900;
+                color: var(--green-glow);
+                display: block;
+            }
+            .stat-label {
+                font-size: 0.85rem;
+                color: rgba(255, 255, 255, 0.75);
+                margin-top: 0.3rem;
+            }
+
+            /* ────────────────────────────────────────────────────────────
+       UNO BANNER — colorful split
+       ──────────────────────────────────────────────────────────── */
+            .uno-banner {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                min-height: 420px;
+                overflow: hidden;
+                border-radius: 24px;
+                margin: 0 1.5rem;
+            }
+            .uno-left {
+                background: linear-gradient(135deg, #eff6ff, #f0f7ff);
+                display: flex;
+                align-items: center;
+                padding: 4rem;
+            }
+            .uno-right {
+                overflow: hidden;
+            }
+            .uno-right img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            .uno-label {
+                font-size: 0.75rem;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                color: var(--green-main);
+                margin-bottom: 1rem;
+            }
+            .uno-title {
+                font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+                font-weight: 800;
+                margin-bottom: 1rem;
+            }
+            .uno-sub {
+                color: var(--grey);
+                margin-bottom: 2rem;
+            }
+
+            /* ────────────────────────────────────────────────────────────
+       NEWSLETTER
+       ──────────────────────────────────────────────────────────── */
+            .newsletter {
+                background: linear-gradient(
+                    135deg,
+                    var(--green-dark) 0%,
+                    var(--green-main) 100%
+                );
+                padding: 4rem 0;
+                text-align: center;
+                color: #fff;
+            }
+            .newsletter h2 {
+                font-size: 2rem;
+                font-weight: 800;
+                margin-bottom: 0.75rem;
+            }
+            .newsletter p {
+                color: rgba(255, 255, 255, 0.8);
+                margin-bottom: 2rem;
+            }
+            .newsletter-form {
+                display: flex;
+                gap: 0.75rem;
+                max-width: 480px;
+                margin: 0 auto;
+            }
+            .newsletter-form input {
+                flex: 1;
+                padding: 0.85rem 1.25rem;
+                border-radius: 8px;
+                border: none;
+                font-size: 0.9rem;
+                outline: none;
+            }
+
+            /* ────────────────────────────────────────────────────────────
+       FOOTER
+       ──────────────────────────────────────────────────────────── */
+            footer {
+                background: var(--dark);
+                color: rgba(255, 255, 255, 0.7);
+                padding: 4rem 0 2rem;
+            }
+            .footer-grid {
+                display: grid;
+                grid-template-columns: 2fr 1fr 1fr 1fr;
+                gap: 3rem;
+                margin-bottom: 3rem;
+            }
+            .footer-brand p {
+                font-size: 0.875rem;
+                margin-top: 1rem;
+                max-width: 280px;
+            }
+            .footer-social {
+                display: flex;
+                gap: 0.75rem;
+                margin-top: 1.5rem;
+            }
+            .social-btn {
+                width: 36px;
+                height: 36px;
+                border-radius: 8px;
+                background: rgba(255, 255, 255, 0.08);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: var(--transition);
+            }
+            .social-btn:hover {
+                background: var(--green-main);
+            }
+            .social-btn svg {
+                width: 16px;
+                height: 16px;
+                fill: rgba(255, 255, 255, 0.8);
+            }
+            .footer-col h4 {
+                font-size: 0.85rem;
+                font-weight: 700;
+                color: #fff;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                margin-bottom: 1.25rem;
+            }
+            .footer-col a {
+                display: block;
+                font-size: 0.85rem;
+                margin-bottom: 0.6rem;
+                transition: color 0.2s;
+            }
+            .footer-col a:hover {
+                color: var(--green-glow);
+            }
+            .footer-bottom {
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
+                padding-top: 1.5rem;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                font-size: 0.8rem;
+            }
+
+            /* ────────────────────────────────────────────────────────────
+       RESPONSIVE
+       ──────────────────────────────────────────────────────────── */
+            @media (max-width: 1024px) {
+                .series-grid {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+                .category-grid {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+            }
+
+            @media (max-width: 768px) {
+                .hero-content-wrap {
+                    grid-template-columns: 1fr;
+                }
+                .hero-img {
+                    display: none;
+                }
+                .spotlight {
+                    grid-template-columns: 1fr;
+                    padding: 2rem;
+                }
+                .spotlight-img {
+                    display: none;
+                }
+                .uno-banner {
+                    grid-template-columns: 1fr;
+                }
+                .uno-right {
+                    display: none;
+                }
+                .stats-grid {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+                .footer-grid {
+                    grid-template-columns: 1fr 1fr;
+                }
+                .nav-menu {
+                    display: none;
+                }
+                .newsletter-form {
+                    flex-direction: column;
+                }
+            }
+
+            @media (max-width: 480px) {
+                .series-grid {
+                    grid-template-columns: 1fr;
+                }
+                .category-grid {
+                    grid-template-columns: 1fr;
+                }
+                .footer-grid {
+                    grid-template-columns: 1fr;
+                }
+            }
+
+            /* ============================================================
+       WIRELESS CHARGING ANIMATION — Diagonal Floating View
+       Phone in FRONT, powerbank slides from behind to attach
+    ============================================================ */
+
+            /* Scene container */
+            .wc-scene {
+                position: relative;
+                width: 100%;
+                height: 380px;
+                border-radius: 16px;
+                overflow: hidden;
+                background: radial-gradient(
+                    ellipse at 65% 55%,
+                    #080e28 0%,
+                    #050810 40%,
+                    #030509 100%
+                );
+                box-shadow: 0 32px 80px rgba(0, 0, 0, 0.6);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            /* Dark-blue starfield particles */
+            .wc-scene::before {
+                content: "";
+                position: absolute;
+                inset: 0;
+                background-image:
+                    radial-gradient(
+                        1px 1px at 20% 30%,
+                        rgba(255, 255, 255, 0.4) 0%,
+                        transparent 100%
+                    ),
+                    radial-gradient(
+                        1px 1px at 70% 20%,
+                        rgba(255, 255, 255, 0.3) 0%,
+                        transparent 100%
+                    ),
+                    radial-gradient(
+                        1px 1px at 85% 60%,
+                        rgba(255, 255, 255, 0.2) 0%,
+                        transparent 100%
+                    ),
+                    radial-gradient(
+                        1px 1px at 40% 75%,
+                        rgba(255, 255, 255, 0.25) 0%,
+                        transparent 100%
+                    ),
+                    radial-gradient(
+                        1px 1px at 15% 65%,
+                        rgba(255, 255, 255, 0.15) 0%,
+                        transparent 100%
+                    );
+                pointer-events: none;
+            }
+
+            /* Main blue glow radial */
+            .wc-glow-bg {
+                position: absolute;
+                top: 40%;
+                left: 55%;
+                transform: translate(-50%, -50%);
+                width: 320px;
+                height: 320px;
+                background: radial-gradient(
+                    circle,
+                    rgba(37, 99, 235, 0.3) 0%,
+                    rgba(29, 78, 216, 0.12) 45%,
+                    transparent 70%
+                );
+                border-radius: 50%;
+                animation: glowPulse 2.5s ease-in-out infinite;
+                pointer-events: none;
+            }
+            @keyframes glowPulse {
+                0%,
+                100% {
+                    transform: translate(-50%, -50%) scale(1);
+                    opacity: 0.6;
+                }
+                50% {
+                    transform: translate(-50%, -50%) scale(1.18);
+                    opacity: 1;
+                }
+            }
+
+            /* ── 3D STAGE ─────────────────────────────────────────
+       Matches reference diagonal:
+       rotateX tilts it back, rotateZ rotates it so top points top-right.
+    ──────────────────────────────────────────────────── */
+            .wc-stage {
+                position: relative;
+                width: 140px;
+                height: 280px;
+                transform-style: preserve-3d;
+                /* Tilt backwards (X) and spin clockwise (Z) */
+                transform: rotateX(55deg) rotateZ(35deg);
+                margin-top: -20px;
+                margin-left: -50px;
+            }
+
+            /* ── PHONE — in front, stays still ── */
+            .wc-phone {
+                position: absolute;
+                inset: 0;
+                transform: translateZ(35px);
+                transform-style: preserve-3d;
+                z-index: 10;
+                animation: phoneFloat 3.5s ease-in-out 2.2s infinite;
+            }
+            @keyframes phoneFloat {
+                0%,
+                100% {
+                    transform: translateZ(35px) translateY(0);
+                }
+                50% {
+                    transform: translateZ(35px) translateY(-8px);
+                }
+            }
+
+            .wc-phone-body {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(
+                    135deg,
+                    #1c2030 0%,
+                    #0e1118 60%,
+                    #090c12 100%
+                );
+                border-radius: 28px;
+                border: 1.5px solid rgba(255, 255, 255, 0.15);
+                box-shadow:
+                    0 0 0 1px #06080d,
+                    inset 2px 2px 0 rgba(255, 255, 255, 0.08),
+                    -15px 20px 40px rgba(0, 0, 0, 0.8),
+                    0 0 30px rgba(29, 78, 216, 0.15);
+                overflow: hidden;
+            }
+
+            /* Camera pill (Dynamic Island) */
+            .wc-camera {
+                position: absolute;
+                top: 10px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 44px;
+                height: 12px;
+                background: #07090d;
+                border-radius: 9px;
+                border: 1px solid rgba(255, 255, 255, 0.08);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 3;
+                gap: 4px;
+            }
+            .wc-cam-lens {
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                background: radial-gradient(circle, #0d1e38 30%, #050c16 100%);
+                border: 0.5px solid rgba(255, 255, 255, 0.08);
+                box-shadow: 0 0 5px rgba(37, 99, 235, 0.5);
+            }
+
+            /* Screen */
+            .wc-screen {
+                position: absolute;
+                top: 30px;
+                left: 6px;
+                right: 6px;
+                bottom: 20px;
+                background: #040912;
+                border-radius: 20px;
+                overflow: hidden;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            /* MagSafe ring on screen */
+            .wc-magsafe-ring {
+                position: relative;
+                width: 84px;
+                height: 84px;
+                margin: auto; /* Vertically center in screen */
+                border-radius: 50%;
+                opacity: 0;
+                animation: magRingAppear 0.6s ease-out 2.4s forwards;
+            }
+            .wc-magsafe-ring::before,
+            .wc-magsafe-ring::after {
+                content: "";
+                position: absolute;
+                border-radius: 50%;
+                animation: magRingSpin 3s linear 2.4s infinite;
+            }
+            /* Outer ring */
+            .wc-magsafe-ring::before {
+                inset: 0;
+                border: 4px solid transparent;
+                border-top-color: #60a5fa;
+                border-right-color: #3b82f6;
+                box-shadow:
+                    0 0 20px rgba(96, 165, 250, 0.6),
+                    inset 0 0 10px rgba(96, 165, 250, 0.4);
+            }
+            /* Inner glow ring */
+            .wc-magsafe-ring::after {
+                inset: 12px;
+                border: 3px solid transparent;
+                border-top-color: rgba(147, 197, 253, 0.9);
+                border-right-color: rgba(96, 165, 250, 0.6);
+                animation-direction: reverse;
+                animation-duration: 2s;
+            }
+            @keyframes magRingAppear {
+                to {
+                    opacity: 1;
+                }
+            }
+            @keyframes magRingSpin {
+                to {
+                    transform: rotate(360deg);
+                }
+            }
+
+            /* Center dot of magsafe */
+            .wc-magsafe-dot {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 24px;
+                height: 24px;
+                border-radius: 50%;
+                background: radial-gradient(
+                    circle,
+                    rgba(96, 165, 250, 0.6) 0%,
+                    transparent 70%
+                );
+                opacity: 0;
+                animation: fadeInBat 0.5s ease-out 2.6s forwards;
+            }
+            @keyframes fadeInBat {
+                to {
+                    opacity: 1;
+                }
+            }
+
+            /* Battery icon inside MagSafe ring */
+            .wc-bat-center {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 28px;
+                height: 14px;
+                border: 1.5px solid rgba(255, 255, 255, 0.8);
+                border-radius: 3px;
+                opacity: 0;
+                animation: fadeInBat 0.4s ease-out 2.8s forwards;
+            }
+            .wc-bat-center::after {
+                content: "";
+                position: absolute;
+                right: -4px;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 3px;
+                height: 6px;
+                background: rgba(255, 255, 255, 0.8);
+                border-radius: 0 2px 2px 0;
+            }
+            .wc-bat-center-fill {
+                height: 100%;
+                width: 0%;
+                background: #3b82f6;
+                animation: batFill 2s ease-out 2.8s forwards;
+            }
+            @keyframes batFill {
+                to {
+                    width: 84%;
+                }
+            }
+
+            /* Home indicator */
+            .wc-home-bar {
+                position: absolute;
+                bottom: 6px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 44px;
+                height: 4px;
+                background: rgba(255, 255, 255, 0.25);
+                border-radius: 3px;
+            }
+
+            /* ── POWERBANK — slides from behind and below, towards the phone's back ── */
+            .wc-powerbank {
+                position: absolute;
+                left: 50%;
+                /* Adjusted width and height for PB relative to phone */
+                width: 140px;
+                height: 210px;
+                margin-left: -70px;
+                bottom: 20px;
+                transform-style: preserve-3d;
+                z-index: 1;
+                /* Starts very far back & down, slides up behind phone */
+                animation:
+                    pbSlideUp 1.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0.4s both,
+                    pbFloat 3.5s ease-in-out 2.2s infinite;
+            }
+            @keyframes pbSlideUp {
+                0% {
+                    transform: translateZ(-200px) translateY(120px)
+                        translateX(-30px);
+                    opacity: 0;
+                }
+                100% {
+                    transform: translateZ(-30px) translateY(20px)
+                        translateX(10px);
+                    opacity: 1;
+                }
+            }
+            @keyframes pbFloat {
+                0%,
+                100% {
+                    transform: translateZ(-30px) translateY(20px)
+                        translateX(10px);
+                }
+                50% {
+                    transform: translateZ(-30px) translateY(12px)
+                        translateX(10px);
+                }
+            }
+
+            .wc-pb-body {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(135deg, #181e2c 0%, #0e1220 100%);
+                border-radius: 20px;
+                border: 1.5px solid rgba(37, 99, 235, 0.4);
+                box-shadow:
+                    0 0 30px rgba(37, 99, 235, 0.2) inset,
+                    -10px 20px 40px rgba(0, 0, 0, 0.7);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-end;
+                padding-bottom: 20px;
+            }
+            .wc-pb-label {
+                font-size: 8px;
+                font-weight: 800;
+                letter-spacing: 3px;
+                color: rgba(255, 255, 255, 0.3);
+                margin-bottom: 20px;
+            }
+            .wc-pb-port {
+                width: 24px;
+                height: 6px;
+                background: #080b14;
+                border-radius: 3px;
+                border: 1px solid rgba(255, 255, 255, 0.08);
+                margin-bottom: 10px;
+            }
+
+            /* Wireless charging ripple rings shooting UP towards the phone */
+            .wc-pb-rings {
+                position: absolute;
+                top: 40%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 100px;
+                height: 100px;
+                transform-style: preserve-3d;
+            }
+            .wc-ring {
+                position: absolute;
+                inset: 0;
+                border-radius: 50%;
+                border: 2px solid #60a5fa;
+                filter: drop-shadow(0 0 6px #3b82f6);
+                opacity: 0;
+                animation: ringShoot 2.4s ease-out infinite;
+            }
+            .wc-ring-1 {
+                animation-delay: 2.2s;
+            }
+            .wc-ring-2 {
+                animation-delay: 2.6s;
+            }
+            .wc-ring-3 {
+                animation-delay: 3s;
+            }
+
+            @keyframes ringShoot {
+                0% {
+                    opacity: 0;
+                    transform: translateZ(0) scale(0.6);
+                }
+                20% {
+                    opacity: 0.8;
+                }
+                80% {
+                    opacity: 0.1;
+                }
+                100% {
+                    opacity: 0;
+                    transform: translateZ(40px) scale(1.4);
+                }
+            }
+
+            /* Magnet snap glow on phone back */
+            .wc-magnet-glow {
+                position: absolute;
+                top: 40%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 90px;
+                height: 90px;
+                border-radius: 50%;
+                background: radial-gradient(
+                    circle,
+                    rgba(96, 165, 250, 0.6) 0%,
+                    transparent 60%
+                );
+                opacity: 0;
+                animation: magnetSnapGlow 0.6s ease-out 2s forwards;
+            }
+            @keyframes magnetSnapGlow {
+                0% {
+                    opacity: 0;
+                    transform: translate(-50%, -50%) scale(1.5);
+                }
+                50% {
+                    opacity: 1;
+                    transform: translate(-50%, -50%) scale(0.8);
+                }
+                100% {
+                    opacity: 0;
+                    transform: translate(-50%, -50%) scale(1.2);
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <!-- ── NAVBAR ── -->
+        <nav class="ugreen-nav">
+            <div class="container">
+                <!-- Logo -->
+                <a href="/ugreen" class="nav-logo">
+                    <img
+                        src="/logo.png"
+                        alt="Valditech Logo"
+                        style="height:38px;width:auto;object-fit:contain;filter:brightness(1.05);"
+                    />
+                </a>
+
+                <!-- Nav Links -->
+                <ul class="nav-menu">
+                    <li><a href="#chargers" class="nav-link">Chargers</a></li>
+                    <li><a href="#nas" class="nav-link">NAS</a></li>
+                    <li>
+                        <a href="#powerbanks" class="nav-link">Power Banks</a>
+                    </li>
+                    <li><a href="#hubs" class="nav-link">Hubs & Docks</a></li>
+                    <li><a href="#cables" class="nav-link">Cables</a></li>
+                </ul>
+
+                <!-- Right actions -->
+                <div class="nav-right">
+                    <button class="nav-icon-btn" aria-label="Search">
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                        >
+                            <circle cx="11" cy="11" r="8"></circle><path
+                                d="m21 21-4.35-4.35"></path>
+                        </svg>
+                    </button>
+                    <button class="nav-icon-btn" aria-label="Cart">
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                        >
+                            <path
+                                d="M6 2 3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"
+                            ></path><line x1="3" y1="6" x2="21" y2="6"
+                            ></line><path d="M16 10a4 4 0 01-8 0"></path>
+                        </svg>
+                    </button>
+                    <a href="/" class="back-link">
+                        <svg
+                            width="14"
+                            height="14"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2.5"
+                            ><path d="M19 12H5M12 5l-7 7 7 7"></path></svg
+                        >
+                        Valditech
+                    </a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- ── PROMO BAR ── -->
+        <div class="promo-bar">
+            🎉 Gratis Ongkir untuk pembelian di atas Rp 500.000 — <a
+                href="#shop">Belanja Sekarang</a
+            >
+        </div>
+
+        <!-- ── HERO BANNER ── -->
+        <section class="hero-banner">
+            <div class="hero-glow"></div>
+            <div class="container" style="width:100%">
+                <div class="hero-content-wrap">
+                    <div class="hero-text">
+                        <span class="hero-tag">✦ BARU · Seri MagFlow</span>
+                        <h1 class="hero-title">
+                            Next-Gen <em>25W Magnetic</em><br />Charging
+                        </h1>
+                        <p class="hero-subtitle">
+                            Pengisian daya magnetis generasi berikutnya. Cepat,
+                            ringkas, dan kompatibel dengan semua perangkat Anda.
+                        </p>
+                        <div style="display:flex; gap:1rem; flex-wrap:wrap;">
+                            <a href="#magflow" class="btn btn-green"
+                                >Pelajari Selengkapnya →</a
+                            >
+                            <a
+                                href="#shop"
+                                class="btn btn-outline"
+                                style="color:#fff;border-color:rgba(255,255,255,0.4)"
+                                >Lihat Semua Produk</a
+                            >
+                        </div>
+                    </div>
+                    <div class="hero-img">
+                        <!-- CSS Wireless Charging Animation -->
+                        <!-- CSS Wireless Charging Animation — 3D Isometric -->
+                        <!-- Wireless Charging Animation — Diagonal 3D Match Reference -->
+                        <div
+                            class="wc-scene"
+                            aria-label="Animasi wireless charging"
+                        >
+                            <div class="wc-glow-bg"></div>
+
+                            <div class="wc-stage">
+                                <!-- PHONE — in front -->
+                                <div class="wc-phone">
+                                    <div class="wc-phone-body">
+                                        <div class="wc-camera">
+                                            <div class="wc-cam-lens"></div>
+                                        </div>
+                                        <div class="wc-screen">
+                                            <!-- MagSafe charging ring on screen -->
+                                            <div class="wc-magsafe-ring">
+                                                <div class="wc-magsafe-dot">
+                                                </div>
+                                                <div class="wc-bat-center">
+                                                    <div
+                                                        class="wc-bat-center-fill"
+                                                    >
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="wc-home-bar"></div>
+                                    </div>
+                                </div>
+
+                                <!-- POWERBANK — slides from behind -->
+                                <div class="wc-powerbank">
+                                    <!-- Glow when attaching -->
+                                    <div class="wc-magnet-glow"></div>
+
+                                    <!-- Upward shooting rings -->
+                                    <div class="wc-pb-rings">
+                                        <div class="wc-ring wc-ring-1"></div>
+                                        <div class="wc-ring wc-ring-2"></div>
+                                        <div class="wc-ring wc-ring-3"></div>
+                                    </div>
+
+                                    <div class="wc-pb-body">
+                                        <div class="wc-pb-label">UGREEN</div>
+                                        <div class="wc-pb-port"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- /wc-scene -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── FEATURED SERIES ── -->
+        <section class="section section-dark" id="series">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge" style="color:var(--green-glow)"
+                        >Lini Produk Unggulan</span
+                    >
+                    <h2 class="section-title light">
+                        Temukan Seri Terbaik Kami
+                    </h2>
+                    <p class="section-sub light">
+                        Dirancang untuk performa optimal, dibuat untuk setiap
+                        gaya hidup
+                    </p>
+                </div>
+
+                <div class="series-grid">
+                    <!-- Nexode -->
+                    <div class="series-card">
+                        <img
+                            src="/ugreen/nexode-charger.png"
+                            alt="UGREEN Nexode Series"
+                            loading="lazy"
+                        />
+                        <div class="series-card-overlay">
+                            <div class="series-name">UGREEN Nexode</div>
+                            <div class="series-desc">
+                                Bertenaga · Andal · Unggulan Industri
+                            </div>
+                            <a href="#nexode" class="series-cta"
+                                >Pelajari Selengkapnya →</a
+                            >
+                        </div>
+                    </div>
+                    <!-- NASync -->
+                    <div class="series-card">
+                        <img
+                            src="/ugreen/nasync-nas.png"
+                            alt="UGREEN NASync Series"
+                            loading="lazy"
+                        />
+                        <div class="series-card-overlay">
+                            <div class="series-name">UGREEN NASync</div>
+                            <div class="series-desc">
+                                Kapasitas Besar · Mudah Digunakan · Aman
+                            </div>
+                            <a href="#nasync" class="series-cta"
+                                >Pelajari Selengkapnya →</a
+                            >
+                        </div>
+                    </div>
+                    <!-- MagFlow -->
+                    <div class="series-card">
+                        <img
+                            src="/ugreen/hero-magflow.png"
+                            alt="UGREEN MagFlow Series"
+                            loading="lazy"
+                        />
+                        <div class="series-card-overlay">
+                            <div class="series-name">UGREEN MagFlow</div>
+                            <div class="series-desc">
+                                Cepat · Mudah · Ringkas
+                            </div>
+                            <a href="#magflow" class="series-cta"
+                                >Pelajari Selengkapnya →</a
+                            >
+                        </div>
+                    </div>
+                    <!-- Uno -->
+                    <div class="series-card">
+                        <img
+                            src="/ugreen/uno-series.png"
+                            alt="UGREEN Uno Series"
+                            loading="lazy"
+                        />
+                        <div class="series-card-overlay">
+                            <div class="series-name">UGREEN Uno</div>
+                            <div class="series-desc">
+                                Menyenangkan · Cepat · Kreatif
+                            </div>
+                            <a href="#uno" class="series-cta"
+                                >Pelajari Selengkapnya →</a
+                            >
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── NASync SPOTLIGHT ── -->
+        <section class="section" id="nasync" style="padding:4rem 0">
+            <div class="spotlight">
+                <div class="spotlight-text">
+                    <span class="spotlight-tag">NASync DH2300</span>
+                    <h2 class="spotlight-title">
+                        Penyimpanan Cerdas<br />yang Sederhana
+                    </h2>
+                    <p class="spotlight-sub">
+                        Kelola dan lindungi data Anda dengan NAS UGREEN — solusi
+                        penyimpanan pribadi yang aman, kapasitas besar, dan
+                        mudah digunakan.
+                    </p>
+                    <div class="spotlight-features">
+                        <div class="feature-item">
+                            <span class="feature-dot"></span>Kapasitas hingga
+                            128TB
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-dot"></span>Kompatibel dengan
+                            semua platform
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-dot"></span>Enkripsi data
+                            AES-256
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-dot"></span>Akses jarak jauh
+                            kapanpun
+                        </div>
+                    </div>
+                    <a href="#nasync" class="btn btn-green">Lihat NAS Series</a>
+                </div>
+                <div class="spotlight-img">
+                    <img
+                        src="/ugreen/nasync-nas.png"
+                        alt="UGREEN NASync DH2300"
+                        loading="lazy"
+                    />
+                </div>
+            </div>
+        </section>
+
+        <!-- ── STATS ── -->
+        <div class="stats-bar">
+            <div class="container">
+                <div class="stats-grid">
+                    <div>
+                        <span class="stat-num">20M+</span>
+                        <div class="stat-label">Pengguna di Seluruh Dunia</div>
+                    </div>
+                    <div>
+                        <span class="stat-num">100+</span>
+                        <div class="stat-label">Negara & Wilayah</div>
+                    </div>
+                    <div>
+                        <span class="stat-num">2000+</span>
+                        <div class="stat-label">Produk Tersedia</div>
+                    </div>
+                    <div>
+                        <span class="stat-num">14+</span>
+                        <div class="stat-label">Tahun Berpengalaman</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ── CATEGORY EXPLORE ── -->
+        <section class="section section-light" id="chargers">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">Jelajahi Koleksi</span>
+                    <h2 class="section-title">
+                        Produk UGREEN untuk Semua Kebutuhan
+                    </h2>
+                    <p class="section-sub">
+                        Temukan aksesori yang tepat untuk perangkat Anda
+                    </p>
+                </div>
+
+                <div class="category-grid">
+                    <div class="category-card" id="chargers">
+                        <img
+                            src="/ugreen/nexode-charger.png"
+                            alt="Chargers"
+                            loading="lazy"
+                        />
+                        <div class="category-info">
+                            <div class="category-name">Chargers</div>
+                            <div class="category-count">Seri Nexode & GaN</div>
+                            <div class="category-arrow">Lihat Semua →</div>
+                        </div>
+                    </div>
+                    <div class="category-card" id="nas">
+                        <img
+                            src="/ugreen/nasync-nas.png"
+                            alt="NAS Storage"
+                            loading="lazy"
+                        />
+                        <div class="category-info">
+                            <div class="category-name">NAS Storage</div>
+                            <div class="category-count">Seri NASync</div>
+                            <div class="category-arrow">Lihat Semua →</div>
+                        </div>
+                    </div>
+                    <div class="category-card" id="powerbanks">
+                        <img
+                            src="/ugreen/powerbank.png"
+                            alt="Power Banks"
+                            loading="lazy"
+                        />
+                        <div class="category-info">
+                            <div class="category-name">Power Banks</div>
+                            <div class="category-count">
+                                Kapasitas 5.000–45.000 mAh
+                            </div>
+                            <div class="category-arrow">Lihat Semua →</div>
+                        </div>
+                    </div>
+                    <div class="category-card" id="hubs">
+                        <img
+                            src="/ugreen/hub-dock.png"
+                            alt="Hubs & Docks"
+                            loading="lazy"
+                        />
+                        <div class="category-info">
+                            <div class="category-name">Hubs & Docks</div>
+                            <div class="category-count">
+                                USB-C, HDMI, Multiport
+                            </div>
+                            <div class="category-arrow">Lihat Semua →</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Second row -->
+                <div class="category-grid" style="margin-top:1rem">
+                    <div class="category-card" id="cables">
+                        <img
+                            src="/ugreen/cables.png"
+                            alt="Cables"
+                            loading="lazy"
+                        />
+                        <div class="category-info">
+                            <div class="category-name">Cables</div>
+                            <div class="category-count">
+                                USB-C, Lightning, HDMI
+                            </div>
+                            <div class="category-arrow">Lihat Semua →</div>
+                        </div>
+                    </div>
+                    <div class="category-card" id="uno">
+                        <img
+                            src="/ugreen/uno-series.png"
+                            alt="Seri Uno"
+                            loading="lazy"
+                        />
+                        <div class="category-info">
+                            <div class="category-name">Seri Uno</div>
+                            <div class="category-count">
+                                Warna-warni & Stylish
+                            </div>
+                            <div class="category-arrow">Lihat Semua →</div>
+                        </div>
+                    </div>
+                    <div class="category-card">
+                        <img
+                            src="/ugreen/hub-dock.png"
+                            alt="Mobile Accessories"
+                            loading="lazy"
+                        />
+                        <div class="category-info">
+                            <div class="category-name">Aksesori Audio</div>
+                            <div class="category-count">
+                                DAC, Earbuds & Adapters
+                            </div>
+                            <div class="category-arrow">Lihat Semua →</div>
+                        </div>
+                    </div>
+                    <div class="category-card">
+                        <img
+                            src="/ugreen/hero-magflow.png"
+                            alt="MagFlow"
+                            loading="lazy"
+                        />
+                        <div class="category-info">
+                            <div class="category-name">Wireless Charging</div>
+                            <div class="category-count">Seri MagFlow</div>
+                            <div class="category-arrow">Lihat Semua →</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── UNO BANNER ── -->
+        <section class="section" style="padding: 3rem 0">
+            <div class="uno-banner">
+                <div class="uno-left">
+                    <div>
+                        <div class="uno-label">UGREEN Uno Series</div>
+                        <h2 class="uno-title">
+                            Menyenangkan.<br />Cepat. Kreatif.
+                        </h2>
+                        <p class="uno-sub">
+                            Ekspresikan diri Anda dengan aksesori berdesain
+                            warna-warni yang tetap bertenaga dan andal untuk
+                            aktivitas sehari-hari.
+                        </p>
+                        <a href="#uno" class="btn btn-green"
+                            >Jelajahi Seri Uno</a
+                        >
+                    </div>
+                </div>
+                <div class="uno-right">
+                    <img
+                        src="/ugreen/uno-series.png"
+                        alt="UGREEN Uno Series"
+                        loading="lazy"
+                    />
+                </div>
+            </div>
+        </section>
+
+        <!-- ── NEWSLETTER ── -->
+        <div class="newsletter">
+            <div class="container">
+                <h2>Dapatkan Penawaran Eksklusif</h2>
+                <p>
+                    Daftar sekarang dan dapatkan diskon 10% untuk pembelian
+                    pertama Anda
+                </p>
+                <form class="newsletter-form" onsubmit="return false">
+                    <input
+                        type="email"
+                        placeholder="Masukkan email Anda..."
+                        aria-label="Email untuk newsletter"
+                        maxlength="100"
+                        autocomplete="email"
+                    />
+                    <button type="submit" class="btn btn-white"
+                        >Daftar Sekarang</button
+                    >
+                </form>
+            </div>
+        </div>
+
+        <!-- ── FOOTER ── -->
+        <footer>
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <div style="display:flex;align-items:center;gap:0.5rem">
+                            <img
+                                src="/logo.png"
+                                alt="Valditech Logo"
+                                style="height:30px;width:auto;object-fit:contain;filter:brightness(1.3);"
+                            />
+                        </div>
+                        <p>
+                            UGREEN menyediakan aksesori teknologi berkualitas
+                            tinggi untuk menghubungkan dan memberdayakan
+                            kehidupan digitalmu.
+                        </p>
+                        <div class="footer-social">
+                            <!-- Instagram -->
+                            <a
+                                href="#"
+                                class="social-btn"
+                                aria-label="Instagram"
+                            >
+                                <svg viewBox="0 0 24 24"
+                                    ><path
+                                        d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                                    ></path></svg
+                                >
+                            </a>
+                            <!-- TikTok -->
+                            <a href="#" class="social-btn" aria-label="TikTok">
+                                <svg viewBox="0 0 24 24"
+                                    ><path
+                                        d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.31 6.31 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.77 1.52V6.75a4.85 4.85 0 01-1-.06z"
+                                    ></path></svg
+                                >
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4>Produk</h4>
+                        <a href="#chargers">Chargers</a>
+                        <a href="#nas">NAS Storage</a>
+                        <a href="#powerbanks">Power Banks</a>
+                        <a href="#hubs">Hubs & Docks</a>
+                        <a href="#cables">Cables</a>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4>Dukungan</h4>
+                        <a href="#">Hubungi Kami</a>
+                        <a href="#">Garansi Produk</a>
+                        <a href="#">Panduan Pengguna</a>
+                        <a href="#">Unduh Driver</a>
+                        <a href="#">FAQ</a>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4>Perusahaan</h4>
+                        <a href="#">Tentang UGREEN</a>
+                        <a href="#">Blog & Berita</a>
+                        <a href="#">Karir</a>
+                        <a href="#">Kebijakan Privasi</a>
+                    </div>
+                </div>
+
+                <div class="footer-bottom">
+                    <span>© 2026 UGREEN. All rights reserved.</span>
+                    <span
+                        >Didistribusikan oleh <a
+                            href="/"
+                            style="color:var(--green-glow)"
+                            >Valditech Indonesia</a
+                        ></span
+                    >
+                </div>
+            </div>
+        </footer>
+
+        <script>
+            // Sticky nav on scroll
+            const nav = document.querySelector(".ugreen-nav");
+            window.addEventListener("scroll", () => {
+                nav.style.boxShadow =
+                    window.scrollY > 20
+                        ? "0 4px 24px rgba(0,0,0,0.12)"
+                        : "none";
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,158 @@
+---
+// Navbar.astro â€” Mobile-First Responsive Navbar
+---
+
+<header
+    id="navbar"
+    class="fixed top-0 left-0 w-full z-50 transition-all duration-300 py-5"
+>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between">
+
+            <!-- Logo -->
+            <a href="#" class="flex items-center flex-shrink-0">
+                <img
+                    src="/logo.png"
+                    alt="Valditech Logo"
+                    class="w-auto object-contain transition-all duration-300 hover:scale-105" style="height:2.25rem;max-height:2.25rem;"
+                />
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden lg:flex items-center gap-7 xl:gap-10">
+                <a href="#courses" class="nav-link">Training &amp; Courses</a>
+                <a href="#certifications" class="nav-link">Certifications</a>
+                <a href="#solutions" class="nav-link">Organization Solutions</a>
+                <a href="#resources" class="nav-link">Resources</a>
+            </nav>
+
+            <!-- Desktop Actions -->
+            <div class="hidden lg:flex items-center gap-3">
+                <button aria-label="Search" class="p-2 rounded-full text-slate-300 hover:text-cyan-400 hover:bg-cyan-400/10 transition-all duration-200">
+                    <i data-lucide="search" class="w-5 h-5"></i>
+                </button>
+                <a href="#contact" class="px-5 py-2 text-sm font-semibold border-2 border-cyan-400 text-cyan-400 rounded-lg hover:bg-cyan-400 hover:text-slate-900 transition-all duration-200">
+                    Log In
+                </a>
+            </div>
+
+            <!-- Mobile Hamburger -->
+            <button id="mobile-menu-btn" aria-label="Toggle Menu" aria-expanded="false"
+                class="lg:hidden p-2 rounded-lg text-slate-300 hover:text-cyan-400 hover:bg-cyan-400/10 transition-all duration-200">
+                <i data-lucide="menu" class="w-6 h-6" id="icon-menu"></i>
+                <i data-lucide="x" class="w-6 h-6 hidden" id="icon-close"></i>
+            </button>
+
+        </div>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div id="mobile-nav" class="lg:hidden hidden overflow-hidden transition-all duration-300">
+        <nav class="flex flex-col gap-1 px-4 sm:px-6 pt-3 pb-5 mt-2 border-t border-cyan-400/10">
+            <a href="#courses" class="mobile-nav-link">Training &amp; Courses</a>
+            <a href="#certifications" class="mobile-nav-link">Certifications</a>
+            <a href="#solutions" class="mobile-nav-link">Organization Solutions</a>
+            <a href="#resources" class="mobile-nav-link">Resources</a>
+            <div class="flex items-center gap-3 pt-3 mt-1 border-t border-cyan-400/10">
+                <button aria-label="Search" class="p-2 rounded-full text-slate-300 hover:text-cyan-400 transition-all duration-200">
+                    <i data-lucide="search" class="w-5 h-5"></i>
+                </button>
+                <a href="#contact" class="px-5 py-2 text-sm font-semibold border-2 border-cyan-400 text-cyan-400 rounded-lg hover:bg-cyan-400 hover:text-slate-900 transition-all duration-200">
+                    Log In
+                </a>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<style>
+    #navbar.scrolled {
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
+        background-color: rgba(15, 23, 42, 0.9);
+        border-bottom: 1px solid rgba(34, 211, 238, 0.1);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        box-shadow: 0 4px 30px rgba(0,0,0,0.5);
+    }
+    .nav-link {
+        color: rgb(203 213 225);
+        font-weight: 500;
+        font-size: 0.875rem;
+        position: relative;
+        transition: color 0.2s;
+    }
+    .nav-link:hover { color: rgb(34 211 238); }
+    .nav-link::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -4px;
+        width: 0;
+        height: 2px;
+        background: linear-gradient(to right, #22d3ee, #8b5cf6);
+        transition: width 0.3s;
+    }
+    .nav-link:hover::after { width: 100%; }
+    .mobile-nav-link {
+        display: block;
+        padding: 0.625rem 0.75rem;
+        border-radius: 0.5rem;
+        color: rgb(203 213 225);
+        font-weight: 500;
+        font-size: 0.875rem;
+        transition: color 0.2s, background-color 0.2s;
+    }
+    .mobile-nav-link:hover {
+        color: rgb(34 211 238);
+        background-color: rgba(34, 211, 238, 0.1);
+    }
+</style>
+
+<script>
+    const navbar   = document.getElementById('navbar');
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileNav = document.getElementById('mobile-nav');
+    const iconMenu  = document.getElementById('icon-menu');
+    const iconClose = document.getElementById('icon-close');
+
+    window.addEventListener('scroll', () => {
+        navbar?.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    mobileBtn?.addEventListener('click', () => {
+        const isOpen = !mobileNav?.classList.contains('hidden');
+        mobileNav?.classList.toggle('hidden', isOpen);
+        iconMenu?.classList.toggle('hidden', !isOpen);
+        iconClose?.classList.toggle('hidden', isOpen);
+        mobileBtn.setAttribute('aria-expanded', String(!isOpen));
+    });
+
+    mobileNav?.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            mobileNav.classList.add('hidden');
+            iconMenu?.classList.remove('hidden');
+            iconClose?.classList.add('hidden');
+            mobileBtn?.setAttribute('aria-expanded', 'false');
+        });
+    });
+
+    window.addEventListener('resize', () => {
+        if (window.innerWidth >= 1024) {
+            mobileNav?.classList.add('hidden');
+            iconMenu?.classList.remove('hidden');
+            iconClose?.classList.add('hidden');
+            mobileBtn?.setAttribute('aria-expanded', 'false');
+        }
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (href && href !== '#') {
+                e.preventDefault();
+                document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+</script>
