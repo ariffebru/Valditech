@@ -2,12 +2,16 @@
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="Valditech - IT Training Courses &amp; Certifications">
+<Layout title="Valditech - IT Training Courses & Certifications">
 	<!-- Header / Navbar -->
 	<header class="navbar" id="navbar">
 		<div class="container nav-container">
 			<a href="#" class="logo">
-				<img src={`${import.meta.env.BASE_URL}logo.png`} alt="Valditech Logo" class="logo-img" />
+				<img
+					src={`${import.meta.env.BASE_URL}logo.png`}
+					alt="Valditech Logo"
+					class="logo-img"
+				/>
 			</a>
 
 			<nav class="nav-links">
@@ -17,18 +21,32 @@ import Layout from "../layouts/Layout.astro";
 				<a href="#resources" class="nav-item">Resources</a>
 				<!-- Product Dropdown -->
 				<div class="nav-dropdown" id="product-dropdown">
-					<button class="nav-item nav-dropdown-btn" aria-haspopup="true" aria-expanded="false" aria-controls="product-menu">
-						Products <i data-lucide="chevron-down" class="dropdown-chevron"></i>
+					<button
+						class="nav-item nav-dropdown-btn"
+						aria-haspopup="true"
+						aria-expanded="false"
+						aria-controls="product-menu"
+					>
+						Products <i
+							data-lucide="chevron-down"
+							class="dropdown-chevron"></i>
 					</button>
 					<ul class="dropdown-menu" id="product-menu" role="menu">
-						<li role="menuitem"><a href={`${import.meta.env.BASE_URL}ugreen`} class="dropdown-item">
-							<span class="dropdown-icon">&#9679;</span>
-							<span>UGREEN</span>
-						</a></li>
-						<li role="menuitem"><a href="#mcdodo" class="dropdown-item">
-							<span class="dropdown-icon">&#9679;</span>
-							<span>Mcdodo</span>
-						</a></li>
+						<li role="menuitem">
+							<a
+								href={`${import.meta.env.BASE_URL}ugreen`}
+								class="dropdown-item"
+							>
+								<span class="dropdown-icon">&#9679;</span>
+								<span>UGREEN</span>
+							</a>
+						</li>
+						<li role="menuitem">
+							<a href="#mcdodo" class="dropdown-item">
+								<span class="dropdown-icon">&#9679;</span>
+								<span>Mcdodo</span>
+							</a>
+						</li>
 					</ul>
 				</div>
 			</nav>
@@ -58,7 +76,9 @@ import Layout from "../layouts/Layout.astro";
 				<div class="hero-content">
 					<div class="badge">#1 IT Training Partner</div>
 					<h1 class="hero-title">
-						Upskilling People.<br /><span class="text-gradient">Advancing Organizations.</span>
+						Upskilling People.<br /><span class="text-gradient"
+							>Advancing Organizations.</span
+						>
 					</h1>
 					<p class="hero-subtitle">
 						Get Ahead, Get Certified, Grow Your Skills Through Our
@@ -76,13 +96,18 @@ import Layout from "../layouts/Layout.astro";
 							spellcheck="false"
 							aria-label="Search training courses"
 						/>
-						<button class="btn btn-primary" type="button" aria-label="Find Training">Find Training</button>
+						<button
+							class="btn btn-primary"
+							type="button"
+							aria-label="Find Training">Find Training</button
+						>
 					</div>
 
 					<div class="hero-stats">
 						<div class="stat-item">
 							<span class="stat-num">3M+</span>
-							<span class="stat-label">Professionals Trained</span>
+							<span class="stat-label">Professionals Trained</span
+							>
 						</div>
 						<div class="stat-item">
 							<span class="stat-num">65+</span>
@@ -106,7 +131,9 @@ import Layout from "../layouts/Layout.astro";
 								const <span class="keyword">skill</span> = new Skill();
 							</div>
 							<div class="code-line">
-								<span class="keyword">skill</span>.upgrade(<span class="string">'Cybersecurity'</span>);
+								<span class="keyword">skill</span>.upgrade(<span
+									class="string">'Cybersecurity'</span
+								>);
 							</div>
 							<div class="code-line">
 								<span class="keyword">skill</span>.certify();
@@ -129,7 +156,8 @@ import Layout from "../layouts/Layout.astro";
 			</div>
 		</section>
 
-		<!-- Trusted Partners (Marquee) -->		<section class="trusted-partners">
+		<!-- Trusted Partners (Marquee) -->
+		<section class="trusted-partners">
 			<div class="container">
 				<p class="partners-label">
 					TRUSTED BY INDUSTRY LEADERS WORLDWIDE
@@ -443,10 +471,37 @@ import Layout from "../layouts/Layout.astro";
 							class="logo-img"
 						/>
 					</a>
-					<p>
-						Empowering professionals and organizations worldwide
-						through cutting-edge IT and management training.
-					</p>
+					<div
+						class="mt-6 mb-8 text-slate-400 text-sm leading-relaxed"
+					>
+						<p class="font-semibold text-slate-200 mb-1">
+							PT. Valdi Inovasi Digital
+						</p>
+						<p class="mb-4">
+							CYBER 2 TOWER LANTAI 17-18<br />
+							JL. H.R RASUNA SAID NO. 13
+						</p>
+						<div class="flex flex-col gap-1">
+							<p>
+								<span class="text-slate-300 font-medium"
+									>Email:</span
+								>
+								<a
+									href="mailto:info@valditech.id"
+									class="hover:text-cyan-400 transition-colors"
+									>info@valditech.id</a>
+							</p>
+							<p>
+								<span class="text-slate-300 font-medium"
+									>Phone:</span
+								>
+								<a
+									href="tel:+6285817399938"
+									class="hover:text-cyan-400 transition-colors"
+									>+62 858-1739-9938</a>
+							</p>
+						</div>
+					</div>
 					<div class="social-links">
 						<a href="#" aria-label="LinkedIn"
 							><i data-lucide="linkedin"></i></a
