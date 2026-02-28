@@ -30,6 +30,7 @@ jobs:
         run: |
           REPO_URL="https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/ariffebru/Valditech.git"
 
+          cp .cpanel.yml dist/.cpanel.yml
           cd dist
 
           git init
