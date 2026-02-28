@@ -45,7 +45,7 @@
     </div>
 
     <!-- ── Main Content ──────────────────────────────── -->
-    <div class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-6 lg:px-8">
         <!--
       Grid layout:
         mobile  → 1 column (stacked)
@@ -56,11 +56,11 @@
         >
             <!-- ── Left: Text Content ─────────────────── -->
             <div
-                class="flex flex-col items-center text-center lg:items-start lg:text-left"
+                class="flex flex-col items-center text-center lg:items-start lg:text-left w-full"
             >
                 <!-- Badge -->
                 <span
-                    class="inline-block mb-5 px-4 py-1.5 text-xs sm:text-sm font-semibold rounded-full
+                    class="inline-block mb-4 sm:mb-5 px-4 py-1.5 text-xs sm:text-sm font-semibold rounded-full
                  border border-cyan-400/30 bg-cyan-400/10 text-cyan-400 tracking-wide"
                 >
                     #1 IT Training Partner
@@ -68,12 +68,12 @@
 
                 <!-- Heading -->
                 <h1
-                    class="text-3xl sm:text-4xl md:text-5xl xl:text-[3.75rem] font-extrabold leading-tight text-white mb-5
-                 [text-wrap:balance]"
+                    class="text-3xl sm:text-4xl md:text-5xl xl:text-[3.75rem] font-extrabold leading-tight text-white mb-4 sm:mb-5
+                 sm:[text-wrap:balance] break-words"
                 >
-                    Upskilling People.<br />
+                    Upskilling People.<br class="hidden sm:block" />
                     <span
-                        class="bg-gradient-to-r from-cyan-400 to-violet-500 bg-clip-text text-transparent"
+                        class="bg-gradient-to-r from-cyan-400 to-violet-500 bg-clip-text text-transparent break-words"
                     >
                         Advancing Organizations.
                     </span>
@@ -81,7 +81,7 @@
 
                 <!-- Subtitle -->
                 <p
-                    class="text-slate-400 text-base sm:text-lg leading-relaxed mb-8 max-w-xl"
+                    class="text-slate-400 text-sm sm:text-base md:text-lg leading-relaxed mb-6 sm:mb-8 max-w-xl px-2 sm:px-0"
                 >
                     Get Ahead, Get Certified, Grow Your Skills Through Our Top
                     Rated IT and Management Training Solutions.
@@ -89,23 +89,24 @@
 
                 <!-- Search Bar -->
                 <div
-                    class="w-full max-w-xl flex items-center gap-2 bg-white/5 border border-cyan-400/20 rounded-xl px-4 py-2.5
-                 focus-within:border-cyan-400 focus-within:shadow-[0_0_0_3px_rgba(0,229,255,0.1)] transition-all duration-200 mb-10"
+                    class="w-full sm:max-w-xl flex items-center gap-2 bg-white/5 border border-cyan-400/20 rounded-xl px-3 sm:px-4 py-2 sm:py-2.5
+                 focus-within:border-cyan-400 focus-within:shadow-[0_0_0_3px_rgba(0,229,255,0.1)] transition-all duration-200 mb-8 sm:mb-10"
                 >
                     <i
                         data-lucide="search"
-                        class="w-5 h-5 text-cyan-400 shrink-0"></i>
+                        class="w-4 h-4 sm:w-5 sm:h-5 text-cyan-400 shrink-0"
+                    ></i>
                     <input
                         type="text"
                         placeholder="Cari kursus... (e.g. Cybersecurity, PMP)"
-                        class="flex-1 bg-transparent outline-none text-sm sm:text-base text-slate-100 placeholder-slate-500"
+                        class="flex-1 bg-transparent outline-none text-[13px] sm:text-sm md:text-base text-slate-100 placeholder-slate-500 min-w-0"
                     />
                     <button
-                        class="shrink-0 px-4 py-2 text-sm font-bold rounded-lg
+                        class="shrink-0 px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-bold rounded-lg
                    bg-gradient-to-r from-cyan-400 to-cyan-500 text-slate-900
                    hover:from-cyan-300 hover:to-cyan-400 hover:-translate-y-0.5
                    shadow-[0_10px_25px_-5px_rgba(0,229,255,0.35)]
-                   transition-all duration-200"
+                   transition-all duration-200 whitespace-nowrap"
                     >
                         Cari
                     </button>
@@ -113,14 +114,14 @@
 
                 <!-- Stats — 3 columns on sm+ -->
                 <div
-                    class="w-full max-w-xl grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-0
-                 border-t border-cyan-400/15 pt-6"
+                    class="w-full sm:max-w-xl grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-0
+                 border-t border-cyan-400/15 pt-6 sm:pt-6"
                 >
                     <div
                         class="flex flex-col items-center sm:items-start sm:pr-6 sm:border-r sm:border-cyan-400/15"
                     >
                         <span
-                            class="text-2xl sm:text-3xl font-extrabold text-cyan-400 leading-none mb-1
+                            class="text-3xl sm:text-3xl font-extrabold text-cyan-400 leading-none mb-1
                          drop-shadow-[0_0_20px_rgba(0,229,255,0.4)]"
                             >3M+</span
                         >
@@ -133,7 +134,7 @@
                         class="flex flex-col items-center sm:items-start sm:px-6 sm:border-r sm:border-cyan-400/15"
                     >
                         <span
-                            class="text-2xl sm:text-3xl font-extrabold text-cyan-400 leading-none mb-1
+                            class="text-3xl sm:text-3xl font-extrabold text-cyan-400 leading-none mb-1
                          drop-shadow-[0_0_20px_rgba(0,229,255,0.4)]"
                             >65+</span
                         >
