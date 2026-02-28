@@ -23,33 +23,22 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Build site
+      - name: Build site (for cPanel — no base path)
         run: npm run build
 
-      - name: Push dist to output branch (preserving history)
+      - name: Push dist to output branch (force, for cPanel)
         run: |
           REPO_URL="https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/ariffebru/Valditech.git"
-          
-          # Clone the output branch (or create it if it doesn't exist)
-          git clone --branch output "$REPO_URL" output-repo 2>/dev/null || {
-            git clone "$REPO_URL" output-repo
-            cd output-repo
-            git checkout --orphan output
-            git rm -rf . 2>/dev/null || true
-            cd ..
-          }
-          
-          cd output-repo
-          
-          # Configure git
+
+          cd dist
+
+          git init
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          
-          # Remove old files and copy new build
-          git rm -rf . 2>/dev/null || true
-          cp -r ../dist/. .
-          
-          # Commit and push (no --force, so cPanel can fast-forward)
+
+          git checkout --orphan output
           git add -A
           git commit -m "Deploy built site from commit ${{ github.sha }}"
-          git push origin output
+
+          git remote add origin "$REPO_URL"
+          git push origin output --force
