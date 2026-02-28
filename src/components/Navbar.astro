@@ -197,9 +197,14 @@
         link.addEventListener("click", (e) => {
             // Check if the user clicked on a link that is intended to toggle the drop down.
             // In our case, the dropdown trigger is NOT an <a> tag, but let's be safe.
-            const isDropdownToggle = e.target.closest("#mobile-product-btn");
-            if (isDropdownToggle) {
-                return; // Do nothing, let the toggle logic handle it
+            const target = e.target;
+            if (target && "closest" in target) {
+                const isDropdownToggle = (target as Element).closest(
+                    "#mobile-product-btn",
+                );
+                if (isDropdownToggle) {
+                    return; // Do nothing, let the toggle logic handle it
+                }
             }
 
             mobileNav.classList.add("hidden");
