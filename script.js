@@ -22,13 +22,6 @@ document.addEventListener('DOMContentLoaded', () => {
         mobileMenuBtn.addEventListener('click', () => {
             navLinks.classList.toggle('nav-open');
         });
-
-        // Tutup menu saat klik salah satu nav link
-        navLinks.querySelectorAll('.nav-item').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('nav-open');
-            });
-        });
     }
 
     // Reset mobile menu class on resize ke desktop
