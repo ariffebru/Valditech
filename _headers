@@ -1,0 +1,25 @@
+/*
+  # ===== SECURITY HEADERS =====
+  # Berlaku untuk semua halaman
+
+  # 1. Mencegah clickjacking (halaman tidak bisa di-embed dalam iframe)
+  X-Frame-Options: DENY
+
+  # 2. Mencegah browser menebak tipe konten (MIME sniffing)
+  X-Content-Type-Options: nosniff
+
+  # 3. Paksa HTTPS selama 1 tahun (termasuk subdomain)
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+
+  # 4. Kontrol informasi Referrer yang dikirim ke situs lain
+  Referrer-Policy: strict-origin-when-cross-origin
+
+  # 5. Batasi fitur browser berbahaya (Permissions Policy)
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()
+
+  # 6. Content Security Policy — hanya izinkan sumber yang dipercaya
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://unpkg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self';
+
+  # 7. Hapus informasi server (tidak menampilkan teknologi yang digunakan)
+  X-Powered-By:
+  Server:
