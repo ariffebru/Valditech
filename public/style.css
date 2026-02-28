@@ -1545,6 +1545,25 @@ img {
         flex-direction: column;
     }
 
+    /* Disable animations on mobile for performance and stability */
+    .hero-wave-canvas,
+    .solutions-wave-canvas {
+        display: none !important;
+    }
+
+    .shape,
+    .shape-1,
+    .shape-2,
+    .shape-3,
+    .floating-badge {
+        animation: none !important;
+    }
+
+    .glass-card,
+    .glass-card:hover {
+        transform: none !important;
+    }
+
     .footer-top {
         grid-template-columns: 1fr;
     }
