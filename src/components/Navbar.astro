@@ -19,7 +19,7 @@
             </a>
 
             <!-- Desktop Nav Links -->
-            <nav class="hidden lg:flex items-center gap-7 xl:gap-10">
+            <nav class="hidden xl:flex items-center gap-7 xl:gap-10">
                 <a href="#courses" class="nav-link">Training &amp; Courses</a>
                 <a href="#certifications" class="nav-link">Certifications</a>
                 <a href="#solutions" class="nav-link">Organization Solutions</a>
@@ -27,7 +27,7 @@
             </nav>
 
             <!-- Desktop Actions -->
-            <div class="hidden lg:flex items-center gap-3">
+            <div class="hidden xl:flex items-center gap-3">
                 <button
                     aria-label="Search"
                     class="p-2 rounded-full text-slate-300 hover:text-cyan-400 hover:bg-cyan-400/10 transition-all duration-200"
@@ -47,7 +47,7 @@
                 id="mobile-menu-btn"
                 aria-label="Toggle Menu"
                 aria-expanded="false"
-                class="lg:hidden p-2 rounded-lg text-slate-300 hover:text-cyan-400 hover:bg-cyan-400/10 transition-all duration-200"
+                class="xl:hidden p-2 rounded-lg text-slate-300 hover:text-cyan-400 hover:bg-cyan-400/10 transition-all duration-200"
             >
                 <i data-lucide="menu" class="w-6 h-6" id="icon-menu"></i>
                 <i data-lucide="x" class="w-6 h-6 hidden" id="icon-close"></i>
@@ -58,7 +58,7 @@
     <!-- Mobile Drawer Menu -->
     <div
         id="mobile-nav"
-        class="lg:hidden hidden overflow-hidden transition-all duration-300"
+        class="xl:hidden hidden overflow-hidden transition-all duration-300"
     >
         <nav
             class="flex flex-col gap-1 px-4 sm:px-6 pt-3 pb-5 mt-2 border-t border-cyan-400/10"
@@ -249,7 +249,7 @@
     });
 
     window.addEventListener("resize", () => {
-        if (window.innerWidth >= 1024) {
+        if (window.innerWidth >= 1280) {
             mobileNav?.classList.add("hidden");
             iconMenu?.classList.remove("hidden");
             iconClose?.classList.add("hidden");
