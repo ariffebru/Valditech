@@ -52,28 +52,28 @@
         lg      → 2 columns (content | visual)
     -->
         <div
-            class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center w-full max-w-[100vw]"
+            class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center w-full max-w-[100vw] box-border"
         >
             <!-- ── Left: Text Content ─────────────────── -->
             <div
-                class="flex flex-col items-center text-center lg:items-start lg:text-left w-full overflow-hidden"
+                class="flex flex-col items-center text-center lg:items-start lg:text-left w-full overflow-hidden box-border px-1 sm:px-0"
             >
                 <!-- Badge -->
                 <span
                     class="inline-block mb-4 sm:mb-5 px-3 sm:px-4 py-1.5 text-xs sm:text-sm font-semibold rounded-full
-                 border border-cyan-400/30 bg-cyan-400/10 text-cyan-400 tracking-wide break-words max-w-full"
+                 border border-cyan-400/30 bg-cyan-400/10 text-cyan-400 tracking-wide break-all sm:break-words max-w-full"
                 >
                     #1 IT Training Partner
                 </span>
 
                 <!-- Heading -->
                 <h1
-                    class="text-[1.75rem] leading-[1.2] sm:text-4xl md:text-5xl xl:text-[3.75rem] font-extrabold text-white mb-4 sm:mb-5
-                 sm:[text-wrap:balance] break-words w-full max-w-full"
+                    class="text-3xl leading-[1.1] sm:text-4xl md:text-5xl xl:text-[3.75rem] font-extrabold text-white mb-4 sm:mb-5
+                 sm:[text-wrap:balance] break-all sm:break-words w-full max-w-full"
                 >
                     Upskilling People.<br class="hidden sm:block" />
                     <span
-                        class="bg-gradient-to-r from-cyan-400 to-violet-500 bg-clip-text text-transparent break-words whitespace-normal"
+                        class="bg-gradient-to-r from-cyan-400 to-violet-500 bg-clip-text text-transparent break-all sm:break-words whitespace-normal"
                     >
                         Advancing Organizations.
                     </span>
@@ -81,7 +81,7 @@
 
                 <!-- Subtitle -->
                 <p
-                    class="text-slate-400 text-sm sm:text-base md:text-lg leading-relaxed mb-6 sm:mb-8 max-w-xl px-2 sm:px-0 break-words w-full"
+                    class="text-slate-400 text-sm sm:text-base md:text-lg leading-relaxed mb-6 sm:mb-8 max-w-xl break-words w-full"
                 >
                     Get Ahead, Get Certified, Grow Your Skills Through Our Top
                     Rated IT and Management Training Solutions.
@@ -90,7 +90,7 @@
                 <!-- Search Bar -->
                 <div
                     class="w-full max-w-full sm:max-w-xl flex items-center gap-1.5 sm:gap-2 bg-white/5 border border-cyan-400/20 rounded-xl px-2 sm:px-4 py-1.5 sm:py-2.5
-                 focus-within:border-cyan-400 focus-within:shadow-[0_0_0_3px_rgba(0,229,255,0.1)] transition-all duration-200 mb-8 sm:mb-10 box-border"
+                 focus-within:border-cyan-400 focus-within:shadow-[0_0_0_3px_rgba(0,229,255,0.1)] transition-all duration-200 mb-8 sm:mb-10 box-border overflow-hidden"
                 >
                     <i
                         data-lucide="search"
@@ -98,8 +98,8 @@
                     ></i>
                     <input
                         type="text"
-                        placeholder="Cari kursus... (e.g. Cybersecurity, PMP)"
-                        class="flex-1 bg-transparent outline-none text-[13px] sm:text-sm md:text-base text-slate-100 placeholder-slate-500 min-w-0"
+                        placeholder="Cari kursus... (e.g. Cybersecurity)"
+                        class="flex-1 bg-transparent outline-none text-[12px] sm:text-sm md:text-base text-slate-100 placeholder-slate-500 min-w-0"
                     />
                     <button
                         class="shrink-0 px-3 sm:px-4 py-1.5 sm:py-2 text-[11px] sm:text-sm font-bold rounded-lg
