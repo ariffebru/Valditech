@@ -8,18 +8,20 @@ const __dirname = path.dirname(__filename);
 function processFile(filePath) {
     let content = fs.readFileSync(filePath, 'utf8');
 
-    // Revert href={`${import.meta.env.BASE_URL}...`} back to href="/..."
-    content = content.replace(/href=\{`\$\{import\.meta\.env\.BASE_URL\}(.*?)`\}/g, (match, p1) => {
-        return `href="/${p1}"`;
+    // Replace href="/..." with href={`${import.meta.env.BASE_URL}...`}
+    // Skip external URLs (http, https, #)
+    content = content.replace(/href="\/((?!http|https|#)[^"]*?)"/g, (match, p1) => {
+        return `href={\`\${import.meta.env.BASE_URL}${p1}\`}`;
     });
 
-    // Revert src={`${import.meta.env.BASE_URL}...`} back to src="/..."
-    content = content.replace(/src=\{`\$\{import\.meta\.env\.BASE_URL\}(.*?)`\}/g, (match, p1) => {
-        return `src="/${p1}"`;
+    // Replace src="/..." with src={`${import.meta.env.BASE_URL}...`}
+    // Skip external URLs
+    content = content.replace(/src="\/((?!http|https)[^"]*?)"/g, (match, p1) => {
+        return `src={\`\${import.meta.env.BASE_URL}${p1}\`}`;
     });
 
     fs.writeFileSync(filePath, content, 'utf8');
-    console.log(`Reverted ${filePath}`);
+    console.log(`Updated ${filePath}`);
 }
 
 const files = [

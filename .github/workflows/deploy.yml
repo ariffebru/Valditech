@@ -28,25 +28,11 @@ jobs:
         uses: actions/configure-pages@v5
       - name: Install dependencies
         run: npm install
-      - name: Patch astro.config for GitHub Pages base path
-        run: |
-          node -e "
-          const fs = require('fs');
-          let cfg = fs.readFileSync('astro.config.mjs', 'utf8');
-          cfg = cfg.replace(
-            'site: process.env.ASTRO_SITE,',
-            \"site: 'https://ariffebru.github.io',\"
-          );
-          cfg = cfg.replace(
-            'base: process.env.ASTRO_BASE,',
-            \"base: '/Valditech/',\"
-          );
-          fs.writeFileSync('astro.config.mjs', cfg);
-          console.log('Patched astro.config.mjs');
-          console.log(fs.readFileSync('astro.config.mjs', 'utf8'));
-          "
-      - name: Build site
+      - name: Build with GitHub Pages base path
         run: npm run build
+        env:
+          ASTRO_SITE: https://ariffebru.github.io
+          ASTRO_BASE: /Valditech/
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
