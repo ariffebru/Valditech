@@ -1554,14 +1554,49 @@ img {
     .shape,
     .shape-1,
     .shape-2,
-    .shape-3,
-    .floating-badge {
+    .shape-3 {
         animation: none !important;
     }
 
-    .glass-card,
-    .glass-card:hover {
-        transform: none !important;
+    /* Resize card and badges for mobile instead of removing animations */
+    .hero-image-wrapper {
+        margin-top: 1rem;
+        padding: 2rem 0;
+    }
+
+    .glass-card {
+        width: 100%;
+        padding: 1.25rem;
+    }
+
+    .card-header {
+        margin-bottom: 1rem;
+        padding-bottom: 0.75rem;
+    }
+
+    .code-line {
+        font-size: 0.85rem;
+    }
+
+    .floating-badge {
+        padding: 0.6rem 0.8rem;
+        font-size: 0.7rem;
+        gap: 0.4rem;
+    }
+
+    .floating-badge i {
+        width: 16px;
+        height: 16px;
+    }
+
+    .badge-1 {
+        top: 2%;
+        right: -5%;
+    }
+
+    .badge-2 {
+        bottom: 5%;
+        left: -5%;
     }
 
     .footer-top {
