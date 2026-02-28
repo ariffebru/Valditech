@@ -2,4 +2,6 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/valdiid/public_html/
-    - /usr/bin/rsync -a --exclude='.git/' --exclude='.cpanel.yml' . $DEPLOYPATH
+    - /usr/bin/rsync -r --exclude='.git/' --exclude='.cpanel.yml' . $DEPLOYPATH
+    - chmod 755 $DEPLOYPATH
+    - chmod 644 $DEPLOYPATH/.htaccess || true
