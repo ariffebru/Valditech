@@ -4,6 +4,7 @@ interface Props {
 }
 
 const { title } = Astro.props;
+const versionParams = `?v=${Date.now()}`;
 ---
 
 <!doctype html>
@@ -42,7 +43,10 @@ const { title } = Astro.props;
 		<script is:inline src="https://unpkg.com/lucide@latest"></script>
 
 		<!-- Global stylesheet from public dir -->
-		<link rel="stylesheet" href={`${import.meta.env.BASE_URL}style.css`} />
+		<link
+			rel="stylesheet"
+			href={`${import.meta.env.BASE_URL}style.css${versionParams}`}
+		/>
 	</head>
 	<body class="overflow-x-hidden w-full m-0 p-0">
 		<slot />
@@ -54,8 +58,13 @@ const { title } = Astro.props;
 			});
 		</script>
 		<!-- Security layer — loaded FIRST before any other script -->
-		<script is:inline src={`${import.meta.env.BASE_URL}security.js`}
+		<script
+			is:inline
+			src={`${import.meta.env.BASE_URL}security.js${versionParams}`}
 		></script>
-		<script is:inline src={`${import.meta.env.BASE_URL}script.js`}></script>
+		<script
+			is:inline
+			src={`${import.meta.env.BASE_URL}script.js${versionParams}`}
+		></script>
 	</body>
 </html>
