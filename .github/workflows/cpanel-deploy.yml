@@ -26,20 +26,34 @@ jobs:
       - name: Build site (for cPanel — no base path)
         run: npm run build
 
-      - name: Push dist to output branch (force, for cPanel)
+      - name: Push dist to output branch (for cPanel)
         run: |
           REPO_URL="https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/ariffebru/Valditech.git"
 
-          cp .cpanel.yml dist/.cpanel.yml
-          cd dist
+          # Clone existing output branch to maintain history
+          git clone --branch output "$REPO_URL" output-repo || {
+            echo "Failed to clone output branch, creating a new one..."
+            git init output-repo
+            cd output-repo
+            git checkout -b output
+            cd ..
+          }
 
-          git init
+          cd output-repo
+          
+          # Clean old files (excluding .git)
+          find . -maxdepth 1 ! -name '.git' ! -name '.' -exec rm -rf {} +
+          
+          # Copy new build and cpanel config
+          cp -r ../dist/* .
+          cp ../.cpanel.yml .
+          
+          # Commit and push linearly
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-
-          git checkout --orphan output
+          
           git add -A
-          git commit -m "Deploy built site from commit ${{ github.sha }}"
-
-          git remote add origin "$REPO_URL"
-          git push origin output --force
+          git commit -m "Deploy built site from commit ${{ github.sha }}" || echo "No changes to commit"
+          
+          git remote set-url origin "$REPO_URL"
+          git push origin output
