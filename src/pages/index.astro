@@ -7,7 +7,7 @@ import Layout from "../layouts/Layout.astro";
 	<header class="navbar" id="navbar">
 		<div class="container nav-container">
 			<a href="#" class="logo">
-				<img src="/logo.png" alt="Valditech Logo" class="logo-img" />
+				<img src={`${import.meta.env.BASE_URL}logo.png`} alt="Valditech Logo" class="logo-img" />
 			</a>
 
 			<nav class="nav-links">
@@ -21,7 +21,7 @@ import Layout from "../layouts/Layout.astro";
 						Products <i data-lucide="chevron-down" class="dropdown-chevron"></i>
 					</button>
 					<ul class="dropdown-menu" id="product-menu" role="menu">
-						<li role="menuitem"><a href="/ugreen" class="dropdown-item">
+						<li role="menuitem"><a href={`${import.meta.env.BASE_URL}ugreen`} class="dropdown-item">
 							<span class="dropdown-icon">&#9679;</span>
 							<span>UGREEN</span>
 						</a></li>
@@ -438,7 +438,7 @@ import Layout from "../layouts/Layout.astro";
 				<div class="footer-brand">
 					<a href="#" class="logo">
 						<img
-							src="/logo.png"
+							src={`${import.meta.env.BASE_URL}logo.png`}
 							alt="Valditech Logo"
 							class="logo-img"
 						/>
