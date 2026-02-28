@@ -2,6 +2,4 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/valdiid/public_html/
-    - npm install
-    - npm run build
-    - /bin/cp -r dist/. $DEPLOYPATH
+    - /bin/cp -r . $DEPLOYPATH
