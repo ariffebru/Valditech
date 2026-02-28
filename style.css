@@ -583,11 +583,18 @@ img {
     letter-spacing: 0.5px;
 }
 
+.hero-content {
+    min-width: 0;
+    width: 100%;
+}
+
 .hero-title {
     font-size: clamp(2.5rem, 5vw, 4.5rem);
     margin-bottom: 1.5rem;
     letter-spacing: -1px;
     color: #ffffff;
+    word-break: break-word;
+    overflow-wrap: break-word;
 }
 
 .hero-subtitle {
@@ -1488,8 +1495,13 @@ img {
         display: none;
     }
 
+    .container {
+        padding: 0 var(--spacing-md);
+        /* 1rem instead of 2rem on mobile */
+    }
+
     .hero-title {
-        font-size: clamp(2rem, 8vw, 3rem);
+        font-size: clamp(1.75rem, 8vw, 2.5rem);
     }
 
     .search-bar-interactive {
