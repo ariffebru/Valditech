@@ -194,9 +194,14 @@
     });
 
     mobileNav?.querySelectorAll("a").forEach((link) => {
-        // Prevent dropdown internal links from closing the menu if they are just toggles,
-        // but close it if they are actual page links. Note: UGREEN & Mcdodo are actual links.
-        link.addEventListener("click", () => {
+        link.addEventListener("click", (e) => {
+            // Check if the user clicked on a link that is intended to toggle the drop down.
+            // In our case, the dropdown trigger is NOT an <a> tag, but let's be safe.
+            const isDropdownToggle = e.target.closest("#mobile-product-btn");
+            if (isDropdownToggle) {
+                return; // Do nothing, let the toggle logic handle it
+            }
+
             mobileNav.classList.add("hidden");
             iconMenu?.classList.remove("hidden");
             iconClose?.classList.add("hidden");
@@ -207,6 +212,7 @@
             const prodIcon = document.getElementById("mobile-product-icon");
             if (prodMenu && !prodMenu.classList.contains("hidden")) {
                 prodMenu.classList.add("hidden");
+                prodMenu.classList.remove("flex");
                 prodIcon?.classList.remove("rotate-180");
                 document
                     .getElementById("mobile-product-btn")
